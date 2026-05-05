@@ -1,0 +1,160 @@
+{
+  "config": {
+    "agents": 50,
+    "rounds": 10,
+    "seed": 42,
+    "scenario": "balanced",
+    "initial_agent_usdc": 1000.0,
+    "pool_usdc": 10000.0,
+    "pool_tokens": 10000000.0,
+    "fee_bps": 30.0,
+    "personas": {
+      "Degen": 0.28,
+      "Flipper": 0.22,
+      "Paper_hands": 0.18,
+      "Sniper": 0.12,
+      "Stonks": 0.12,
+      "Diamond": 0.08
+    },
+    "save_path": "results.json",
+    "save_agents": false,
+    "log_every": 1,
+    "gemini_model": "gemini-2.5-flash-lite",
+    "max_concurrent": 50,
+    "api_retries": 2,
+    "api_timeout_s": 20
+  },
+  "scenario": "balanced",
+  "starting_price": 0.001,
+  "final_price": 0.001,
+  "initial_total_value_usdc": 50000.0,
+  "final_total_value_usdc": 50000.0,
+  "pnl_total_usdc": 0.0,
+  "persona_counts": {
+    "Degen": 19,
+    "Diamond": 2,
+    "Flipper": 6,
+    "Paper_hands": 12,
+    "Sniper": 4,
+    "Stonks": 7
+  },
+  "action_counts": {
+    "BUY": 0,
+    "SELL": 0,
+    "HOLD": 500
+  },
+  "agent_value_stats": {
+    "min": 1000.0,
+    "p50": 1000.0,
+    "max": 1000.0,
+    "avg": 1000.0
+  },
+  "agent_pnl_stats": {
+    "min": 0.0,
+    "p50": 0.0,
+    "max": 0.0,
+    "avg": 0.0
+  },
+  "time_series": [
+    {
+      "round": 1,
+      "price": 0.001,
+      "event_type": "INFLUENCER_SHILL",
+      "event_magnitude": 0.14424096004877116,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 2,
+      "price": 0.001,
+      "event_type": "CT_X_NEWS_BULL",
+      "event_magnitude": 0.48122632721999503,
+      "headline": "CT account starts shilling this token aggressively.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 3,
+      "price": 0.001,
+      "event_type": "CT_X_NEWS_BULL",
+      "event_magnitude": 0.03886369299942663,
+      "headline": "Mid-tier influencer posts a paid-looking shill thread.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 4,
+      "price": 0.001,
+      "event_type": "CALL_GROUP_EXIT",
+      "event_magnitude": 0.3079038677395991,
+      "headline": "No big catalyst today; fakeouts and chop continue.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 5,
+      "price": 0.001,
+      "event_type": "KOL_TRENDING",
+      "event_magnitude": 0.10974363556750917,
+      "headline": "No big catalyst today; fakeouts and chop continue.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 6,
+      "price": 0.001,
+      "event_type": "FUD",
+      "event_magnitude": 0.6598708630119271,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 7,
+      "price": 0.001,
+      "event_type": "INFLUENCER_SHILL",
+      "event_magnitude": 0.35542454781642724,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 8,
+      "price": 0.001,
+      "event_type": "CALL_GROUP_EXIT",
+      "event_magnitude": 0.9151482912357077,
+      "headline": "Whale transfer screenshot spreads in Telegram chats.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 9,
+      "price": 0.001,
+      "event_type": "PAID_KOL_THREAD",
+      "event_magnitude": 0.38539066728880084,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    },
+    {
+      "round": 10,
+      "price": 0.001,
+      "event_type": "TG_CALLS_PUMP",
+      "event_magnitude": 0.7372976126619076,
+      "headline": "Mid-tier influencer posts a paid-looking shill thread.",
+      "pool_usdc": 10000.0,
+      "pool_token": 10000000.0,
+      "api_errors": 50
+    }
+  ]
+}
