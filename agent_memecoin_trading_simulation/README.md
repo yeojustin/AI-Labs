@@ -14,7 +14,7 @@ This simulation is for testing how a crowd of different trader personalities beh
 
 That means, each round is one market cycle:
 1. A market event/headline is generated.
-2. Every agent makes one decision (`BUY`, `SELL`, or `HOLD`).
+2. Every agent makes one decision (`BUY`, `SELL`, or `HOLD`). (ie. Decisions are not hardcoded in the round loop. Every agent asks Gemini for `BUY` / `SELL` / `HOLD` each round.)
 3. Trades are executed through the AMM (Automated Market Maker).
 4. Balances, PnL, and price update.
 5. Next round starts with the updated market state.
@@ -70,37 +70,43 @@ PERSONAS="Degen=0.5,Sniper=0.2,Paper_hands=0.15,Stonks=0.1,Flipper=0.05,Diamond=
 SAVE_PATH="results.json" LOG_EVERY=1 python3 main.py
 ```
 
-## Simulation flowchart
-Decisions are not hardcoded in the round loop. Every agent asks Gemini for `BUY` / `SELL` / `HOLD` each round.
-
-```mermaid
-flowchart TD
-    D[For each round]
-    D --> E[Generate random market event]
-    E --> F[Each agent decides BUY / SELL / HOLD]
-    F --> G[Apply trades through AMM]
-    G --> H[Update balances and stats]
-    H --> I{More rounds?}
-    I -->|Yes| D
-    I -->|No| J[Compute final metrics]
-```
-
-Defaults: `1000` agents, `200` rounds, `seed=42`, `SCENARIO=balanced`.
-
 ## Output details (`results.json`)
 
-- `agents` is the main agent-centric section.
-- Each agent object contains:
-- `agent_id`, `persona`
-- `action_counts` (executed BUY/SELL/HOLD totals)
-- `final` snapshot (`usdc_balance`, `token_balance`, `avg_entry_price`, `value_usdc`, `pnl_usdc`)
-- `rounds` history with one entry per round:
-- `requested_action`, `requested_amount`
-- `executed_action`, `executed_usdc`, `executed_token`
-- `usdc_balance`, `token_balance`, `avg_entry_price`, `value_usdc`, `pnl_usdc`
-- Top-level aggregates are still included (`pnl_total_usdc`, `action_counts`, `action_counts_by_persona`, `persona_stats`, distribution stats).
+- Top-level has 4 main sections:
+- `config`
+- `market_summary`
+- `price_history`
+- `rounds`
 
-This structure is optimized for per-agent behavior segregation and round-by-round PnL tracking.
+### `config`
+- Simulation setup: `agents`, `rounds`, `seed`, `scenario`, `fee_bps`
+- Initial pool snapshot in `pool_initial`: `usdc`, `tokens`, `price`
+
+### `market_summary`
+- `final_price`
+- `total_pnl_usdc`
+- `action_totals` (`BUY` / `SELL` / `HOLD`)
+- `persona_performance` by persona:
+- `count`, `win_rate`, `avg_pnl`
+
+### `price_history`
+- Array of market prices from start to end (`rounds + 1` points).
+
+### `rounds`
+- One item per round.
+- Round fields:
+- `round`, `price`, `price_change_pct`
+- `event`, `news`, `errors`
+- `buys`, `sells`, `holds`
+- `total_buy_tokens`, `total_sell_tokens`, `net_order_flow_tokens`
+- `by_persona`:
+- per-persona action counts (`BUY` / `SELL` / `HOLD`) for that round
+- per-persona current PnL fields:
+- `count`, `current_total_pnl`, `current_total_pnl_pct`
+- `avg_pnl`, `avg_pnl_pct`
+- `pnl_change_from_prev_round`, `pnl_change_pct_from_prev_round`
+
+This flatter structure is round-centric and persona-aggregated (instead of large per-agent rows each round).
 
 ## Parallelism
 
