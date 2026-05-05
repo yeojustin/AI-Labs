@@ -13,7 +13,7 @@ from amm import pool_buy, pool_new, pool_price, pool_sell
 from constants import BASE_EVENT_MIX, DEFAULTS, PERSONAS, PERSONA_PROMPTS, SCENARIOS
 
 # Add your own api key
-GEMINI_API_KEY = ""
+GEMINI_API_KEY = "YOUR GEMINI API KEY HERE"
 
 def get_env_value(env_key, default_value, value_type="str"):
     raw_value = os.getenv(env_key)
@@ -412,18 +412,16 @@ def run_simulation(config):
     persona_counts = {persona: 0 for persona in PERSONAS}
     pnl_by_persona = {persona: [] for persona in PERSONAS}
     value_by_persona = {persona: [] for persona in PERSONAS}
-    for agent in agents:
-        persona = agent["persona"]
-        final_value = agent["usdc"] + agent["token"] * final_price
-        pnl = final_value - config["initial_agent_usdc"]
-        persona_counts[persona] = persona_counts.get(persona, 0) + 1
-        pnl_by_persona[persona].append(pnl)
-        value_by_persona[persona].append(final_value)
+    for agent_snapshot in final_agent_snapshots:
+        persona = agent_snapshot["persona"]
+        persona_counts[persona] += 1
+        pnl_by_persona[persona].append(agent_snapshot["pnl_usdc"])
+        value_by_persona[persona].append(agent_snapshot["value_usdc"])
 
     persona_stats = {}
     for persona in PERSONAS:
-        persona_pnls = pnl_by_persona.get(persona, [])
-        persona_values = value_by_persona.get(persona, [])
+        persona_pnls = pnl_by_persona[persona]
+        persona_values = value_by_persona[persona]
         if not persona_pnls:
             persona_stats[persona] = {
                 "count": 0,
