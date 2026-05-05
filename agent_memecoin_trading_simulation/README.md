@@ -1,24 +1,50 @@
 # Memecoin Agent Trading Simulation
 
-## How does this simulation work? 
+## What's the goal?
 
+This simulation is for testing how a crowd of different trader personalities behaves over time in a memecoin market. Some key questions to ask:
+- What happens to price when many agents (traders) react to hype/fear headlines?
+- Which personas perform better in different market scenarios?
+- Does the market become stable, choppy, or boom-bust over many rounds?
 
+## Core idea
 
-## Quick Start
+- `AGENTS` = population size (how many traders exist in the market).
+- `ROUNDS` = time steps (how many market turns happen).
 
+That means, each round is one market cycle:
+1. A market event/headline is generated.
+2. Every agent makes one decision (`BUY`, `SELL`, or `HOLD`).
+3. Trades are executed through the AMM (Automated Market Maker).
+4. Balances, PnL, and price update.
+5. Next round starts with the updated market state.
+
+Example:
+- `AGENTS=50`, `ROUNDS=10` means 50 traders acting once per round for 10 rounds.
+- Max action decisions = `50 * 10 = 500`.
+
+By default in quick start (see below):
+- 1000 agents, 200 rounds, seed=42, SCENARIO=balanced.
+
+## How to run the simulation?
+
+### Quick Start
 ```bash
-# key is set directly in main.py (change it there if needed)
+# set your key in main.py (GEMINI_API_KEY)
+
+# sync your env
+uv sync
 
 # run
-python3 main.py
+uv run python3 main.py
 ```
 
 ## Files / Project layout:
 - `main.py` - runtime loop, Gemini calls, prompt parsing, execution, reporting
-- `constants.py` - personas, scenarios, default config values
-- `amm.py` - constant-product AMM math (`pool_new`, `pool_price`, `pool_buy`, `pool_sell`)
+- `constants.py` - personas, scenarios, default config values (this is where you can tweak your agent/trader personas)
+- `amm.py` - we keep things simple with constant-product AMM (`pool_new`, `pool_price`, `pool_buy`, `pool_sell`)
 
-## Personas
+## Memecoin trader personas...
 | Persona | Rough behavior |
 |--------|------------------|
 | `Degen` | Buys hard on hype, panic-sells on fear, can still hold |
@@ -29,16 +55,23 @@ python3 main.py
 | `Diamond` | Buys dips/hype, mostly holds, sells only on severe fear |
 
 ## Scenarios (persona mix + event-type weights)
-
 - **`balanced`** - mixed hype/fear headlines
 - **`hype_season`** - mostly bullish headlines and momentum
 - **`fear_pit`** - mostly bearish headlines and panic
 
-Pick with `SCENARIO=...`. Override persona counts with `PERSONAS=...` if you want a custom mix (event weights still follow `SCENARIO`).
+If you now understand how the simulation works, you can run it with custom parameters:
+```bash
+# Different "market weather" + persona mix
+SCENARIO=hype_season AGENTS=1000 ROUNDS=100 python3 main.py
 
-Decisions are not hardcoded in the round loop. Every agent asks Gemini for `BUY` / `SELL` / `HOLD` each round.
+# Custom persona weights (refer to persona tables)
+PERSONAS="Degen=0.5,Sniper=0.2,Paper_hands=0.15,Stonks=0.1,Flipper=0.05,Diamond=0.0" SCENARIO=fear_pit python3 main.py
+
+SAVE_PATH="results.json" LOG_EVERY=1 python3 main.py
+```
 
 ## Simulation flowchart
+Decisions are not hardcoded in the round loop. Every agent asks Gemini for `BUY` / `SELL` / `HOLD` each round.
 
 ```mermaid
 flowchart TD
@@ -54,17 +87,24 @@ flowchart TD
 
 Defaults: `1000` agents, `200` rounds, `seed=42`, `SCENARIO=balanced`.
 
-```bash
-# Different "market weather" + persona mix
-SCENARIO=hype_season AGENTS=1000 ROUNDS=100 python3 "agent_memecoin_trading_simulation/main.py"
+## Output details (`results.json`)
 
-# Custom persona weights (names must match table above)
-PERSONAS="Degen=0.5,Sniper=0.2,Paper_hands=0.15,Stonks=0.1,Flipper=0.05,Diamond=0.0" SCENARIO=fear_pit python3 "agent_memecoin_trading_simulation/main.py"
+- `agents` is the main agent-centric section.
+- Each agent object contains:
+- `agent_id`, `persona`
+- `action_counts` (executed BUY/SELL/HOLD totals)
+- `final` snapshot (`usdc_balance`, `token_balance`, `avg_entry_price`, `value_usdc`, `pnl_usdc`)
+- `rounds` history with one entry per round:
+- `requested_action`, `requested_amount`
+- `executed_action`, `executed_usdc`, `executed_token`
+- `usdc_balance`, `token_balance`, `avg_entry_price`, `value_usdc`, `pnl_usdc`
+- Top-level aggregates are still included (`pnl_total_usdc`, `action_counts`, `action_counts_by_persona`, `persona_stats`, distribution stats).
 
-SAVE_PATH="results.json" SAVE_AGENTS=1 python3 "agent_memecoin_trading_simulation/main.py"
-```
+This structure is optimized for per-agent behavior segregation and round-by-round PnL tracking.
 
-Env vars: `AGENTS`, `ROUNDS`, `SEED`, `SCENARIO`, `PERSONAS`, `INITIAL_AGENT_USDC`, `POOL_USDC`, `POOL_TOKENS`, `FEE_BPS`, `SAVE_PATH`, `SAVE_AGENTS`, `LOG_EVERY`, `GEMINI_MODEL`, `MAX_CONCURRENT`, `API_RETRIES`, `API_TIMEOUT_S`.
+## Parallelism
+
+Model calls are executed in parallel each round using `asyncio.gather(...)` with concurrency bounded by `MAX_CONCURRENT`.
 
 ## Events
 

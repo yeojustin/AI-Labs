@@ -1,0 +1,5327 @@
+{
+  "config": {
+    "agents": 50,
+    "rounds": 10,
+    "seed": 42,
+    "scenario": "balanced",
+    "initial_agent_usdc": 1000.0,
+    "pool_usdc": 10000.0,
+    "pool_tokens": 10000000.0,
+    "fee_bps": 30.0,
+    "personas": {
+      "Degen": 0.28,
+      "Flipper": 0.22,
+      "Paper_hands": 0.18,
+      "Sniper": 0.12,
+      "Stonks": 0.12,
+      "Diamond": 0.08
+    },
+    "save_path": "results.json",
+    "log_every": 1,
+    "gemini_model": "gemini-2.5-flash-lite",
+    "max_concurrent": 50,
+    "api_retries": 2,
+    "api_timeout_s": 20
+  },
+  "scenario": "balanced",
+  "starting_price": 0.001,
+  "final_price": 0.008980875890163722,
+  "initial_total_value_usdc": 50000.0,
+  "final_total_value_usdc": 89118.08364935277,
+  "pnl_total_usdc": 39118.083649352775,
+  "persona_counts": {
+    "Degen": 19,
+    "Diamond": 2,
+    "Flipper": 6,
+    "Paper_hands": 12,
+    "Sniper": 4,
+    "Stonks": 7
+  },
+  "action_counts": {
+    "BUY": 114,
+    "SELL": 93,
+    "HOLD": 293
+  },
+  "action_counts_by_persona": {
+    "Degen": {
+      "BUY": 45,
+      "SELL": 45,
+      "HOLD": 100
+    },
+    "Diamond": {
+      "BUY": 3,
+      "SELL": 0,
+      "HOLD": 17
+    },
+    "Flipper": {
+      "BUY": 14,
+      "SELL": 16,
+      "HOLD": 30
+    },
+    "Paper_hands": {
+      "BUY": 48,
+      "SELL": 28,
+      "HOLD": 44
+    },
+    "Sniper": {
+      "BUY": 4,
+      "SELL": 4,
+      "HOLD": 32
+    },
+    "Stonks": {
+      "BUY": 0,
+      "SELL": 0,
+      "HOLD": 70
+    }
+  },
+  "persona_stats": {
+    "Degen": {
+      "count": 19,
+      "win_rate": 0.15789473684210525,
+      "avg_pnl": 1597.4161822212031,
+      "p50_pnl": -787.8703480481781,
+      "avg_value": 2597.416182221203
+    },
+    "Diamond": {
+      "count": 2,
+      "win_rate": 1.0,
+      "avg_pnl": 1000.96978186464,
+      "p50_pnl": 1838.5249574034046,
+      "avg_value": 2000.96978186464
+    },
+    "Flipper": {
+      "count": 6,
+      "win_rate": 0.5,
+      "avg_pnl": 22.783844652549572,
+      "p50_pnl": 30.5453716280972,
+      "avg_value": 1022.7838446525496
+    },
+    "Paper_hands": {
+      "count": 12,
+      "win_rate": 0.16666666666666666,
+      "avg_pnl": 508.95392426710333,
+      "p50_pnl": -762.4573066916314,
+      "avg_value": 1508.9539242671033
+    },
+    "Sniper": {
+      "count": 4,
+      "win_rate": 0.25,
+      "avg_pnl": 130.2716160750242,
+      "p50_pnl": -62.70781114375313,
+      "avg_value": 1130.2716160750242
+    },
+    "Stonks": {
+      "count": 7,
+      "win_rate": 0.0,
+      "avg_pnl": 0.0,
+      "p50_pnl": 0.0,
+      "avg_value": 1000.0
+    }
+  },
+  "agent_value_stats": {
+    "min": 12.351725133672517,
+    "p50": 431.82124861485863,
+    "max": 40573.72060078532,
+    "avg": 1782.3616729870555
+  },
+  "agent_pnl_stats": {
+    "min": -987.6482748663275,
+    "p50": -568.1787513851414,
+    "max": 39573.72060078532,
+    "avg": 782.3616729870555
+  },
+  "time_series": [
+    {
+      "round": 1,
+      "price": 0.020055471832888964,
+      "event_type": "INFLUENCER_SHILL",
+      "event_magnitude": 0.14424096004877116,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 44783.336,
+      "pool_token": 2232973.4435147927,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 1000.0,
+        "p50": 1683.1663514712886,
+        "max": 16568.108264077302,
+        "avg": 3417.667646577793
+      },
+      "agent_pnl_stats": {
+        "min": 0.0,
+        "p50": 683.1663514712886,
+        "max": 15568.108264077302,
+        "avg": 2417.6676465777928
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 500.0,
+          "token_balance": 474829.7375815585,
+          "avg_entry_price": 0.0011021850225,
+          "value_usdc": 10022.934427485006,
+          "pnl_usdc": 9022.934427485006
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 826114.1100109778,
+          "avg_entry_price": 0.0013214652025,
+          "value_usdc": 16568.108264077302,
+          "pnl_usdc": 15568.108264077302
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 694253.2706784261,
+          "avg_entry_price": 0.0015606255625,
+          "value_usdc": 13923.576914982214,
+          "pnl_usdc": 12923.576914982214
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 591629.6729370141,
+          "avg_entry_price": 0.0018196661025,
+          "value_usdc": 11865.412241089598,
+          "pnl_usdc": 10865.412241089598
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 0.0,
+          "token_balance": 510194.5735108992,
+          "avg_entry_price": 0.0020985868225,
+          "value_usdc": 10232.192898340638,
+          "pnl_usdc": 9232.192898340638
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 444490.5673378296,
+          "avg_entry_price": 0.0023973877225,
+          "value_usdc": 8914.468053228677,
+          "pnl_usdc": 7914.468053228677
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 390710.9980728412,
+          "avg_entry_price": 0.0027160688025,
+          "value_usdc": 7835.893416649801,
+          "pnl_usdc": 6835.893416649801
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 900.0,
+          "token_balance": 36486.735616343096,
+          "avg_entry_price": 0.0027490303204000003,
+          "value_usdc": 1631.7586984276354,
+          "pnl_usdc": 631.7586984276354
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 342102.0676359916,
+          "avg_entry_price": 0.0030895795984000004,
+          "value_usdc": 6861.0183814467055,
+          "pnl_usdc": 5861.0183814467055
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 305376.3124020556,
+          "avg_entry_price": 0.0034500090564,
+          "value_usdc": 6124.466031810927,
+          "pnl_usdc": 5124.466031810927
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 274263.22955942526,
+          "avg_entry_price": 0.0038303186944000007,
+          "value_usdc": 5500.478475226213,
+          "pnl_usdc": 4500.478475226213
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 247674.56940727215,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 4967.23035047045,
+          "pnl_usdc": 3967.2303504704496
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 224773.6414586287,
+          "avg_entry_price": 0.0046505785104,
+          "value_usdc": 4507.941435049411,
+          "pnl_usdc": 3507.9414350494108
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 500.0,
+          "token_balance": 104769.12784912251,
+          "avg_entry_price": 0.0048680685769000006,
+          "value_usdc": 2601.194292534419,
+          "pnl_usdc": 1601.1942925344192
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 195949.57619602978,
+          "avg_entry_price": 0.0053179588449,
+          "value_usdc": 3929.8612060660053,
+          "pnl_usdc": 2929.8612060660053
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 179708.47854601033,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 3604.138329610841,
+          "pnl_usdc": 2604.138329610841
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 165406.2236309345,
+          "avg_entry_price": 0.0062773799209,
+          "value_usdc": 3317.2998590147395,
+          "pnl_usdc": 2317.2998590147395
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 152746.0129759647,
+          "avg_entry_price": 0.0067869107289,
+          "value_usdc": 3063.393360825552,
+          "pnl_usdc": 2063.393360825552
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 900.0,
+          "token_balance": 14634.036920810584,
+          "avg_entry_price": 0.0068389572196,
+          "value_usdc": 1193.4925152667738,
+          "pnl_usdc": 193.4925152667738
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 900.0,
+          "token_balance": 14522.878646986093,
+          "avg_entry_price": 0.006891202512100001,
+          "value_usdc": 1191.2631836370942,
+          "pnl_usdc": 191.26318363709424
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 139383.5198229528,
+          "avg_entry_price": 0.007424589536100002,
+          "value_usdc": 2795.4022557781504,
+          "pnl_usdc": 1795.4022557781504
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 2598.0571552820825,
+          "pnl_usdc": 1598.0571552820825
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 120710.06497678207,
+          "avg_entry_price": 0.008551004124100002,
+          "value_usdc": 2420.8973080880496,
+          "pnl_usdc": 1420.8973080880496
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 112750.30858311616,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 2261.260637938225,
+          "pnl_usdc": 1261.260637938225
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 105552.73541249847,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 2116.9099119497446,
+          "pnl_usdc": 1116.9099119497446
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 99023.04529853119,
+          "avg_entry_price": 0.010389727356100002,
+          "value_usdc": 1985.9538957915802,
+          "pnl_usdc": 985.9538957915802
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 900.0,
+          "token_balance": 9566.427111940458,
+          "avg_entry_price": 0.010454099558400001,
+          "value_usdc": 1091.8592094849073,
+          "pnl_usdc": 91.8592094849073
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 92516.48727021599,
+          "avg_entry_price": 0.011108755680400002,
+          "value_usdc": 1855.4618045256473,
+          "pnl_usdc": 855.4618045256473
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 500.0,
+          "token_balance": 44213.23388420977,
+          "avg_entry_price": 0.011443538808900002,
+          "value_usdc": 1386.717266805701,
+          "pnl_usdc": 386.717266805701
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 856.0,
+          "token_balance": 12492.74999836972,
+          "avg_entry_price": 0.011540878154094242,
+          "value_usdc": 1106.5479957076275,
+          "pnl_usdc": 106.54799570762748
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 83925.54239043454,
+          "avg_entry_price": 0.012228217292014242,
+          "value_usdc": 1683.1663514712886,
+          "pnl_usdc": 683.1663514712886
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 79272.58833058737,
+          "avg_entry_price": 0.012935436609934242,
+          "value_usdc": 1589.8491623842974,
+          "pnl_usdc": 589.8491623842974
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 500.0,
+          "token_balance": 38010.70509916218,
+          "avg_entry_price": 0.013296501336394243,
+          "value_usdc": 1262.322625464496,
+          "pnl_usdc": 262.322625464496
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 0.0,
+          "token_balance": 72986.54988698708,
+          "avg_entry_price": 0.014033540924314242,
+          "value_usdc": 1463.7796954382145,
+          "pnl_usdc": 463.7796954382145
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 500.0,
+          "token_balance": 35055.5541200703,
+          "avg_entry_price": 0.014409515785774242,
+          "value_usdc": 1203.0556782413846,
+          "pnl_usdc": 203.0556782413846
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 67419.64027169067,
+          "avg_entry_price": 0.015176375643694241,
+          "value_usdc": 1352.1326964523987,
+          "pnl_usdc": 352.1326964523987
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 856.0,
+          "token_balance": 9425.231292208657,
+          "avg_entry_price": 0.01528844095390096,
+          "value_usdc": 1045.0274606993544,
+          "pnl_usdc": 45.02746069935438
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 300.0,
+          "token_balance": 44848.37212304026,
+          "avg_entry_price": 0.01583907548368896,
+          "value_usdc": 1199.4552638645564,
+          "pnl_usdc": 199.4552638645564
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 61407.26142605767,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 1231.5516018651485,
+          "pnl_usdc": 231.55160186514854
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 58477.392196360976,
+          "avg_entry_price": 0.017465993483368962,
+          "value_usdc": 1172.7916920549185,
+          "pnl_usdc": 172.79169205491849
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 55752.322565938346,
+          "avg_entry_price": 0.018309272753208962,
+          "value_usdc": 1118.1391348393163,
+          "pnl_usdc": 118.13913483931628
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 53213.399665504694,
+          "avg_entry_price": 0.019172432203048963,
+          "value_usdc": 1067.2198381237924,
+          "pnl_usdc": 67.21983812379244
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 50844.04694615817,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 1019.7013513987592,
+          "pnl_usdc": 19.701351398759243
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "price": 0.0033561930228653107,
+      "event_type": "CT_X_NEWS_BULL",
+      "event_magnitude": 0.48122632721999503,
+      "headline": "CT account starts shilling this token aggressively.",
+      "pool_usdc": 18319.91545522334,
+      "pool_token": 5458540.474404219,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 170.64243561493234,
+        "p50": 747.6304772870137,
+        "max": 12300.597047852236,
+        "avg": 1134.989374203405
+      },
+      "agent_pnl_stats": {
+        "min": -829.3575643850677,
+        "p50": -252.36952271298628,
+        "max": 11300.597047852236,
+        "avg": 134.9893742034051
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 499412.1609089188,
+          "avg_entry_price": 0.002057217053704065,
+          "value_usdc": 1676.1236099766013,
+          "pnl_usdc": 676.1236099766013
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 12300.597047852236,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12300.597047852236,
+          "pnl_usdc": 11300.597047852236
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 6129.815147618214,
+          "token_balance": 4.2619649320840836e-07,
+          "avg_entry_price": 0.0015606255625,
+          "value_usdc": 6129.815147619644,
+          "pnl_usdc": 5129.815147619644
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 3671.360586907449,
+          "token_balance": 1.4086253941059113e-08,
+          "avg_entry_price": 0.0018196661025,
+          "value_usdc": 3671.3605869074963,
+          "pnl_usdc": 2671.3605869074963
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 444490.5673378296,
+          "avg_entry_price": 0.0023973877225,
+          "value_usdc": 1491.7961408286674,
+          "pnl_usdc": 491.7961408286674
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 1549.6493938280328,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1549.6493938280328,
+          "pnl_usdc": 549.6493938280328
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 269369.78557271697,
+          "avg_entry_price": 0.0038592653206031362,
+          "value_usdc": 904.0569949098775,
+          "pnl_usdc": -95.94300509012248
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 1287.443325366301,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1287.443325366301,
+          "pnl_usdc": 287.443325366301
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 1017.3418723515206,
+          "token_balance": 5.5588316172361374e-08,
+          "avg_entry_price": 0.0034500090564,
+          "value_usdc": 1017.3418723517071,
+          "pnl_usdc": 17.34187235170714
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 274263.22955942526,
+          "avg_entry_price": 0.0038303186944000007,
+          "value_usdc": 920.4803374758501,
+          "pnl_usdc": -79.51966252414991
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 747.6304772861004,
+          "token_balance": 2.7214991860091686e-07,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 747.6304772870137,
+          "pnl_usdc": -252.36952271298628
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 626.0741630359043,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 626.0741630359043,
+          "pnl_usdc": -373.92583696409565
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 284550.8123439243,
+          "avg_entry_price": 0.0035975010420955886,
+          "value_usdc": 955.0074510393351,
+          "pnl_usdc": -44.99254896066486
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 195949.57619602978,
+          "avg_entry_price": 0.0053179588449,
+          "value_usdc": 657.6446004625298,
+          "pnl_usdc": -342.35539953747025
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 496.8520312807959,
+          "token_balance": 1.0331859812140465e-08,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 496.8520312808306,
+          "pnl_usdc": -503.1479687191694
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 165406.2236309345,
+          "avg_entry_price": 0.0062773799209,
+          "value_usdc": 555.1352136886416,
+          "pnl_usdc": -444.86478631135844
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 399.9022775727317,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 399.9022775727317,
+          "pnl_usdc": -600.0977224272683
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 347680.5097021726,
+          "avg_entry_price": 0.0030136865214089713,
+          "value_usdc": 1166.8829008486866,
+          "pnl_usdc": 166.88290084868663
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 139383.5198229528,
+          "avg_entry_price": 0.007424589536100002,
+          "value_usdc": 467.79799673220293,
+          "pnl_usdc": -532.2020032677971
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 434.77318161439524,
+          "pnl_usdc": -565.2268183856047
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 335.5381162021222,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 335.5381162021222,
+          "pnl_usdc": -664.4618837978778
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 301.57332114343444,
+          "token_balance": 1.1615338735282421e-07,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 301.5733211438243,
+          "pnl_usdc": -698.4266788561757
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.51720767179904,
+          "token_balance": 4.984758561477065e-07,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 272.517207673472,
+          "pnl_usdc": -727.4827923265279
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 99023.04529853119,
+          "avg_entry_price": 0.010389727356100002,
+          "value_usdc": 332.340453733806,
+          "pnl_usdc": -667.659546266194
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 92516.48727021599,
+          "avg_entry_price": 0.011108755680400002,
+          "value_usdc": 310.5031890763062,
+          "pnl_usdc": -689.4968109236938
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 500.0,
+          "token_balance": 44213.23388420977,
+          "avg_entry_price": 0.011443538808900002,
+          "value_usdc": 648.388147080497,
+          "pnl_usdc": -351.611852919503
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 331612.16860035295,
+          "avg_entry_price": 0.003146219102129701,
+          "value_usdc": 1112.9544465537397,
+          "pnl_usdc": 112.95444655373967
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 83925.54239043454,
+          "avg_entry_price": 0.012228217292014242,
+          "value_usdc": 281.67031981096324,
+          "pnl_usdc": -718.3296801890367
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 79272.58833058737,
+          "avg_entry_price": 0.012935436609934242,
+          "value_usdc": 266.0541078595914,
+          "pnl_usdc": -733.9458921404087
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 209832.29642459704,
+          "avg_entry_price": 0.004854895233937765,
+          "value_usdc": 704.2376892320383,
+          "pnl_usdc": -295.7623107679617
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 201290.64828547463,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 675.5702693437452,
+          "pnl_usdc": -324.42973065625483
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 67419.64027169067,
+          "avg_entry_price": 0.015176375643694241,
+          "value_usdc": 226.27332628393737,
+          "pnl_usdc": -773.7266737160626
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 273133.56930212677,
+          "avg_entry_price": 0.0038039550080665287,
+          "value_usdc": 916.6889796020967,
+          "pnl_usdc": -83.31102039790335
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 131579.59457235597,
+          "avg_entry_price": 0.007708741634093148,
+          "value_usdc": 441.60651725518744,
+          "pnl_usdc": -558.3934827448126
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.1296519509924,
+          "token_balance": 5.7669240050017834e-08,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 212.12965195118596,
+          "pnl_usdc": -787.8703480488141
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 58477.392196360976,
+          "avg_entry_price": 0.017465993483368962,
+          "value_usdc": 196.26141568478508,
+          "pnl_usdc": -803.7385843152149
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 188.47346040893171,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 188.47346040893171,
+          "pnl_usdc": -811.5265395910683
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 53213.399665504694,
+          "avg_entry_price": 0.019172432203048963,
+          "value_usdc": 178.5944406803101,
+          "pnl_usdc": -821.4055593196899
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 50844.04694615817,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 170.64243561493234,
+          "pnl_usdc": -829.3575643850677
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "price": 0.0014268311018746746,
+      "event_type": "CT_X_NEWS_BULL",
+      "event_magnitude": 0.03886369299942663,
+      "headline": "Mid-tier influencer posts a paid-looking shill thread.",
+      "pool_usdc": 11945.003565820625,
+      "pool_token": 8371701.142571402,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 72.76885284279354,
+        "p50": 473.154555919092,
+        "max": 12300.597047852236,
+        "avg": 1004.2979848989919
+      },
+      "agent_pnl_stats": {
+        "min": -927.2311471572065,
+        "p50": -526.845444080908,
+        "max": 11300.597047852236,
+        "avg": 4.2979848989919
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 1531.4044880889924,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1531.4044880889924,
+          "pnl_usdc": 531.4044880889924
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 12300.597047852236,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12300.597047852236,
+          "pnl_usdc": 11300.597047852236
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 6129.815147619411,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 6129.815147619411,
+          "pnl_usdc": 5129.815147619411
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 3671.3605869074854,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 3671.3605869074854,
+          "pnl_usdc": 2671.3605869074854
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 1162.5624097146556,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1162.5624097146556,
+          "pnl_usdc": 162.5624097146556
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 549.6493938280328,
+          "token_balance": 383831.58306387346,
+          "avg_entry_price": 0.0027632241874258044,
+          "value_usdc": 1097.3122344253602,
+          "pnl_usdc": 97.3122344253602
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 710.3826018986638,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 710.3826018986638,
+          "pnl_usdc": -289.6173981013362
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 1287.443325366301,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1287.443325366301,
+          "pnl_usdc": 287.443325366301
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 1017.3418723515206,
+          "token_balance": 5.5588316172361374e-08,
+          "avg_entry_price": 0.0034500090564,
+          "value_usdc": 1017.3418723515999,
+          "pnl_usdc": 17.341872351599932
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 274263.22955942526,
+          "avg_entry_price": 0.0038303186944000007,
+          "value_usdc": 391.32730603598156,
+          "pnl_usdc": -608.6726939640184
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 747.6304772861004,
+          "token_balance": 2.7214991860091686e-07,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 747.6304772864887,
+          "pnl_usdc": -252.3695227135113
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 626.0741630359043,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 626.0741630359043,
+          "pnl_usdc": -373.92583696409565
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 687.3208185796266,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.3208185796266,
+          "pnl_usdc": -312.6791814203734
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 439.78324247766614,
+          "token_balance": 2.977321855723858e-08,
+          "avg_entry_price": 0.0053179588449,
+          "value_usdc": 439.7832424777086,
+          "pnl_usdc": -560.2167575222913
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 496.8520312807959,
+          "token_balance": 1.0331859812140465e-08,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 496.85203128081065,
+          "pnl_usdc": -503.14796871918935
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 351.9285980914665,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 351.9285980914665,
+          "pnl_usdc": -648.0714019085335
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 399.9022775727317,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 399.9022775727317,
+          "pnl_usdc": -600.0977224272683
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792169671,
+          "token_balance": 1.7258571460843086e-07,
+          "avg_entry_price": 0.0030136865214089713,
+          "value_usdc": 687.7304792172133,
+          "pnl_usdc": -312.2695207827867
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 257.64943323905027,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 257.64943323905027,
+          "pnl_usdc": -742.3505667609497
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 184.8367759428839,
+          "pnl_usdc": -815.1632240571162
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 335.5381162021222,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 335.5381162021222,
+          "pnl_usdc": -664.4618837978778
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 301.57332114343444,
+          "token_balance": 1.1615338735282421e-07,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 301.5733211436002,
+          "pnl_usdc": -698.4266788563998
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.51720767179904,
+          "token_balance": 4.984758561477065e-07,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 272.51720767251027,
+          "pnl_usdc": -727.4827923274897
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 177.25210241376408,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 177.25210241376408,
+          "pnl_usdc": -822.7478975862359
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 16.322862632532633,
+          "token_balance": 83264.838543216,
+          "avg_entry_price": 0.011108755680400002,
+          "value_usdc": 135.12772395856638,
+          "pnl_usdc": -864.8722760414337
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 450.96889682068974,
+          "pnl_usdc": -549.0311031793103
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 331612.16860035295,
+          "avg_entry_price": 0.003146219102129701,
+          "value_usdc": 473.154555919092,
+          "pnl_usdc": -526.845444080908
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 83925.54239043454,
+          "avg_entry_price": 0.012228217292014242,
+          "value_usdc": 119.74757412437343,
+          "pnl_usdc": -880.2524258756266
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 148.74139166990244,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 148.74139166990244,
+          "pnl_usdc": -851.2586083300976
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 378.6599315368949,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 378.6599315368949,
+          "pnl_usdc": -621.3400684631051
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.006650968137,
+          "pnl_usdc": -655.993349031863
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 111.2661563714264,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 111.2661563714264,
+          "pnl_usdc": -888.7338436285736
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861303964,
+          "token_balance": 1.26776285469532e-07,
+          "avg_entry_price": 0.0038039550080665287,
+          "value_usdc": 431.8212486132205,
+          "pnl_usdc": -568.1787513867795
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 197.80159420481687,
+          "token_balance": 3.5596895031630993e-07,
+          "avg_entry_price": 0.007708741634093148,
+          "value_usdc": 197.80159420532476,
+          "pnl_usdc": -802.1984057946752
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.1296519509924,
+          "token_balance": 5.7669240050017834e-08,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 212.1296519510747,
+          "pnl_usdc": -787.8703480489253
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 85.89347163352613,
+          "token_balance": 3.609748091548681e-07,
+          "avg_entry_price": 0.017465993483368962,
+          "value_usdc": 85.89347163404118,
+          "pnl_usdc": -914.1065283659589
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 188.47346040893171,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 188.47346040893171,
+          "pnl_usdc": -811.5265395910683
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 77.11555520846196,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 77.11555520846196,
+          "pnl_usdc": -922.884444791538
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 72.76885284256787,
+          "token_balance": 1.581647666171193e-07,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 72.76885284279354,
+          "pnl_usdc": -927.2311471572065
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "price": 0.001273548976285817,
+      "event_type": "CALL_GROUP_EXIT",
+      "event_magnitude": 0.3079038677395991,
+      "headline": "No big catalyst today; fakeouts and chop continue.",
+      "pool_usdc": 11285.162720518552,
+      "pool_token": 8861192.56554282,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 72.76885284276929,
+        "p50": 439.78324247770405,
+        "max": 12300.597047852236,
+        "avg": 1000.0027829209268
+      },
+      "agent_pnl_stats": {
+        "min": -927.2311471572307,
+        "p50": -560.2167575222959,
+        "max": 11300.597047852236,
+        "avg": 0.0027829209268418254
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 1531.4044880889924,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1531.4044880889924,
+          "pnl_usdc": 531.4044880889924
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 12300.597047852236,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12300.597047852236,
+          "pnl_usdc": 11300.597047852236
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 6129.815147619411,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 6129.815147619411,
+          "pnl_usdc": 5129.815147619411
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 3671.3605869074854,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 3671.3605869074854,
+          "pnl_usdc": 2671.3605869074854
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 1162.5624097146556,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1162.5624097146556,
+          "pnl_usdc": 162.5624097146556
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 816.5589484949742,
+          "token_balance": 191915.79153187346,
+          "avg_entry_price": 0.0027632241874258044,
+          "value_usdc": 1060.9731083334739,
+          "pnl_usdc": 60.973108333473874
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 710.3826018986638,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 710.3826018986638,
+          "pnl_usdc": -289.6173981013362
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 1287.443325366301,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1287.443325366301,
+          "pnl_usdc": 287.443325366301
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 1017.341872351597,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1017.341872351597,
+          "pnl_usdc": 17.341872351596976
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 361.3726931366655,
+          "token_balance": 4.252651706337929e-07,
+          "avg_entry_price": 0.0038303186944000007,
+          "value_usdc": 361.3726931372071,
+          "pnl_usdc": -638.6273068627929
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 747.6304772861004,
+          "token_balance": 2.7214991860091686e-07,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 747.630477286447,
+          "pnl_usdc": -252.369522713553
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 626.0741630359043,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 626.0741630359043,
+          "pnl_usdc": -373.92583696409565
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 687.3208185796266,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.3208185796266,
+          "pnl_usdc": -312.6791814203734
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 439.78324247766614,
+          "token_balance": 2.977321855723858e-08,
+          "avg_entry_price": 0.0053179588449,
+          "value_usdc": 439.78324247770405,
+          "pnl_usdc": -560.2167575222959
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 496.8520312807959,
+          "token_balance": 1.0331859812140465e-08,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 496.85203128080906,
+          "pnl_usdc": -503.14796871919094
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 9.146646107183187e-08,
+          "token_balance": 265734.4028020501,
+          "avg_entry_price": 0.0013613275278761285,
+          "value_usdc": 338.42577674394033,
+          "pnl_usdc": -661.5742232560597
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 399.9022775727317,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 399.9022775727317,
+          "pnl_usdc": -600.0977224272683
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792169671,
+          "token_balance": 1.7258571460843086e-07,
+          "avg_entry_price": 0.0030136865214089713,
+          "value_usdc": 687.7304792171868,
+          "pnl_usdc": -312.2695207828132
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 257.64943323905027,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 257.64943323905027,
+          "pnl_usdc": -742.3505667609497
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 164.98006419452642,
+          "pnl_usdc": -835.0199358054736
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 335.5381162021222,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 335.5381162021222,
+          "pnl_usdc": -664.4618837978778
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 301.57332114343444,
+          "token_balance": 1.1615338735282421e-07,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 301.57332114358235,
+          "pnl_usdc": -698.4266788564177
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.51720767179904,
+          "token_balance": 4.984758561477065e-07,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 272.51720767243387,
+          "pnl_usdc": -727.4827923275661
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 4.13764070117395e-07,
+          "token_balance": 127877.845131943,
+          "avg_entry_price": 0.0014028778540441564,
+          "value_usdc": 162.85869917118632,
+          "pnl_usdc": -837.1413008288137
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 131.64887914235442,
+          "token_balance": 2.1599407773464918e-07,
+          "avg_entry_price": 0.011108755680400002,
+          "value_usdc": 131.64887914262948,
+          "pnl_usdc": -868.3511208573705
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 402.5220477238937,
+          "pnl_usdc": -597.4779522761063
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 437.848597559072,
+          "token_balance": 3.5297125577926636e-07,
+          "avg_entry_price": 0.003146219102129701,
+          "value_usdc": 437.8485975595215,
+          "pnl_usdc": -562.1514024404785
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 105.67714132949732,
+          "token_balance": 4.3453474063426256e-07,
+          "avg_entry_price": 0.012228217292014242,
+          "value_usdc": 105.67714133005072,
+          "pnl_usdc": -894.3228586699493
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 148.74139166990244,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 148.74139166990244,
+          "pnl_usdc": -851.2586083300976
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 278.6599315368949,
+          "token_balance": 78982.95500677079,
+          "avg_entry_price": 0.001273548976285817,
+          "value_usdc": 379.24859302979655,
+          "pnl_usdc": -620.7514069702034
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.00665096806426,
+          "pnl_usdc": -655.9933490319357
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 111.2661563714264,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 111.2661563714264,
+          "pnl_usdc": -888.7338436285736
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861303964,
+          "token_balance": 1.26776285469532e-07,
+          "avg_entry_price": 0.0038039550080665287,
+          "value_usdc": 431.8212486132011,
+          "pnl_usdc": -568.1787513867989
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 197.80159420481687,
+          "token_balance": 3.5596895031630993e-07,
+          "avg_entry_price": 0.007708741634093148,
+          "value_usdc": 197.80159420527022,
+          "pnl_usdc": -802.1984057947298
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.1296519509924,
+          "token_balance": 5.7669240050017834e-08,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 212.12965195106585,
+          "pnl_usdc": -787.8703480489341
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 85.89347163352613,
+          "token_balance": 3.609748091548681e-07,
+          "avg_entry_price": 0.017465993483368962,
+          "value_usdc": 85.89347163398585,
+          "pnl_usdc": -914.1065283660141
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 188.47346040893171,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 188.47346040893171,
+          "pnl_usdc": -811.5265395910683
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 77.11555520846196,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 77.11555520846196,
+          "pnl_usdc": -922.884444791538
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 72.76885284256787,
+          "token_balance": 1.581647666171193e-07,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 72.76885284276929,
+          "pnl_usdc": -927.2311471572307
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "price": 0.0017203752978655206,
+      "event_type": "KOL_TRENDING",
+      "event_magnitude": 0.10974363556750917,
+      "headline": "No big catalyst today; fakeouts and chop continue.",
+      "pool_usdc": 13116.30778026164,
+      "pool_token": 7624096.786634358,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 72.76885284283998,
+        "p50": 496.8520312808137,
+        "max": 12300.597047852236,
+        "avg": 1015.6171757391305
+      },
+      "agent_pnl_stats": {
+        "min": -927.23114715716,
+        "p50": -503.1479687191863,
+        "max": 11300.597047852236,
+        "avg": 15.61717573913053
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 8.899246495275293e-08,
+          "token_balance": 1055993.4725849908,
+          "avg_entry_price": 0.001641466520260071,
+          "value_usdc": 1816.7050850314415,
+          "pnl_usdc": 816.7050850314415
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 12300.597047852236,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12300.597047852236,
+          "pnl_usdc": 11300.597047852236
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 6129.815147619411,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 6129.815147619411,
+          "pnl_usdc": 5129.815147619411
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 3671.3605869074854,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 3671.3605869074854,
+          "pnl_usdc": 2671.3605869074854
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 662.5624097146556,
+          "token_balance": 292318.0678316327,
+          "avg_entry_price": 0.0017716869135207646,
+          "value_usdc": 1165.459192731974,
+          "pnl_usdc": 165.4591927319741
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 1147.1344171535948,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1147.1344171535948,
+          "pnl_usdc": 147.13441715359477
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 710.3826018986638,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 710.3826018986638,
+          "pnl_usdc": -289.6173981013362
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 1287.443325366301,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1287.443325366301,
+          "pnl_usdc": 287.443325366301
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 1017.341872351597,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1017.341872351597,
+          "pnl_usdc": 17.341872351596976
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 361.3726931366655,
+          "token_balance": 4.252651706337929e-07,
+          "avg_entry_price": 0.0038303186944000007,
+          "value_usdc": 361.3726931373971,
+          "pnl_usdc": -638.6273068626028
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 747.6304772861004,
+          "token_balance": 2.7214991860091686e-07,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 747.6304772865685,
+          "pnl_usdc": -252.36952271343148
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 626.0741630359043,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 626.0741630359043,
+          "pnl_usdc": -373.92583696409565
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 386339.20970096067,
+          "avg_entry_price": 0.0018673649895872215,
+          "value_usdc": 664.64843296642,
+          "pnl_usdc": -335.35156703357995
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 439.78324247766614,
+          "token_balance": 2.977321855723858e-08,
+          "avg_entry_price": 0.0053179588449,
+          "value_usdc": 439.78324247771735,
+          "pnl_usdc": -560.2167575222827
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 496.8520312807959,
+          "token_balance": 1.0331859812140465e-08,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 496.8520312808137,
+          "pnl_usdc": -503.1479687191863
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 477.4488533134376,
+          "token_balance": 5.011679604649544e-08,
+          "avg_entry_price": 0.0013613275278761285,
+          "value_usdc": 477.44885331352384,
+          "pnl_usdc": -522.5511466864762
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 399.9022775727317,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 399.9022775727317,
+          "pnl_usdc": -600.0977224272683
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792169671,
+          "token_balance": 1.7258571460843086e-07,
+          "avg_entry_price": 0.0030136865214089713,
+          "value_usdc": 687.730479217264,
+          "pnl_usdc": -312.269520782736
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 257.64943323905027,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 257.64943323905027,
+          "pnl_usdc": -742.3505667609497
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 222.86353518047423,
+          "pnl_usdc": -777.1364648195258
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 335.5381162021222,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 335.5381162021222,
+          "pnl_usdc": -664.4618837978778
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 301.57332114343444,
+          "token_balance": 1.1615338735282421e-07,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 301.57332114363425,
+          "pnl_usdc": -698.4266788563657
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.51720767179904,
+          "token_balance": 4.984758561477065e-07,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 272.5172076726566,
+          "pnl_usdc": -727.4827923273434
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 218.06589672269402,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 218.06589672269402,
+          "pnl_usdc": -781.934103277306
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 131.64887914235442,
+          "token_balance": 2.1599407773464918e-07,
+          "avg_entry_price": 0.011108755680400002,
+          "value_usdc": 131.648879142726,
+          "pnl_usdc": -868.351120857274
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 543.7474338599922,
+          "pnl_usdc": -456.25256614000784
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 437.848597559665,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 437.848597559665,
+          "pnl_usdc": -562.151402440335
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 3.294973112133448e-07,
+          "token_balance": 62130.73367651606,
+          "avg_entry_price": 0.0017095567057544287,
+          "value_usdc": 106.88817978483695,
+          "pnl_usdc": -893.1118202151631
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 48.74139166990244,
+          "token_balance": 57877.87942743208,
+          "avg_entry_price": 0.001735727660055538,
+          "value_usdc": 148.3130657296956,
+          "pnl_usdc": -851.6869342703044
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 413.938102175578,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 413.938102175578,
+          "pnl_usdc": -586.061897824422
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.00665096827635,
+          "pnl_usdc": -655.9933490317237
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 111.2661563714264,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 111.2661563714264,
+          "pnl_usdc": -888.7338436285736
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861303964,
+          "token_balance": 1.26776285469532e-07,
+          "avg_entry_price": 0.0038039550080665287,
+          "value_usdc": 431.82124861325775,
+          "pnl_usdc": -568.1787513867423
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 197.80159420481687,
+          "token_balance": 3.5596895031630993e-07,
+          "avg_entry_price": 0.007708741634093148,
+          "value_usdc": 197.80159420542927,
+          "pnl_usdc": -802.1984057945707
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.1296519509924,
+          "token_balance": 5.7669240050017834e-08,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 212.12965195109163,
+          "pnl_usdc": -787.8703480489083
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 85.89347163352613,
+          "token_balance": 3.609748091548681e-07,
+          "avg_entry_price": 0.017465993483368962,
+          "value_usdc": 85.89347163414715,
+          "pnl_usdc": -914.1065283658529
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 188.47346040893171,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 188.47346040893171,
+          "pnl_usdc": -811.5265395910683
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 2.0846195525336952e-07,
+          "token_balance": 44953.877176887356,
+          "avg_entry_price": 0.0017203752978655206,
+          "value_usdc": 77.33754004685957,
+          "pnl_usdc": -922.6624599531405
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 72.76885284256787,
+          "token_balance": 1.581647666171193e-07,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 72.76885284283998,
+          "pnl_usdc": -927.23114715716
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "price": 0.00318154455258403,
+      "event_type": "FUD",
+      "event_magnitude": 0.6598708630119271,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 17836.88468478739,
+      "pool_token": 5606360.1782035045,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 72.76885284307107,
+        "p50": 610.7003600737753,
+        "max": 12300.597047852236,
+        "avg": 1117.847198088873
+      },
+      "agent_pnl_stats": {
+        "min": -927.231147156929,
+        "p50": -389.2996399262247,
+        "max": 11300.597047852236,
+        "avg": 117.84719808887297
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 1055993.4726365637,
+          "avg_entry_price": 0.0016414665202639249,
+          "value_usdc": 3359.690280431152,
+          "pnl_usdc": 2359.690280431152
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 12300.597047852236,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12300.597047852236,
+          "pnl_usdc": 11300.597047852236
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 6129.815147619411,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 6129.815147619411,
+          "pnl_usdc": 5129.815147619411
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 3671.3605869074854,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 3671.3605869074854,
+          "pnl_usdc": 2671.3605869074854
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 657878.6812696084,
+          "avg_entry_price": 0.0018418886066672608,
+          "value_usdc": 2093.070334654488,
+          "pnl_usdc": 1093.0703346544879
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 1147.1344171535948,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1147.1344171535948,
+          "pnl_usdc": 147.13441715359477
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 210.38260189866378,
+          "token_balance": 253469.93550567795,
+          "avg_entry_price": 0.002037865456022727,
+          "value_usdc": 1016.8084944505788,
+          "pnl_usdc": 16.80849445057879
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 1287.443325366301,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1287.443325366301,
+          "pnl_usdc": 287.443325366301
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 517.341872351597,
+          "token_balance": 236364.7821615478,
+          "avg_entry_price": 0.002182676042076001,
+          "value_usdc": 1269.3469574603803,
+          "pnl_usdc": 269.3469574603803
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 61.372693136665475,
+          "token_balance": 134314.40028268157,
+          "avg_entry_price": 0.002271948015312899,
+          "value_usdc": 488.6999416896219,
+          "pnl_usdc": -511.3000583103781
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 747.6304772861004,
+          "token_balance": 2.7214991860091686e-07,
+          "avg_entry_price": 0.0042305085124,
+          "value_usdc": 747.6304772869662,
+          "pnl_usdc": -252.3695227130338
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 626.0741630359043,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 626.0741630359043,
+          "pnl_usdc": -373.92583696409565
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 386339.20970096067,
+          "avg_entry_price": 0.0018673649895872215,
+          "value_usdc": 1229.1554080737105,
+          "pnl_usdc": 229.15540807371053
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 4.77666162623791e-07,
+          "token_balance": 187535.00460090672,
+          "avg_entry_price": 0.0024060496926841344,
+          "value_usdc": 596.6509727845018,
+          "pnl_usdc": -403.34902721549815
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 496.8520312807959,
+          "token_balance": 1.0331859812140465e-08,
+          "avg_entry_price": 0.0057877292929,
+          "value_usdc": 496.8520312808288,
+          "pnl_usdc": -503.1479687191712
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 3.13437624299695e-07,
+          "token_balance": 191950.90612964408,
+          "avg_entry_price": 0.0025559897002843434,
+          "value_usdc": 610.7003600737753,
+          "pnl_usdc": -389.2996399262247
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 152192.11414896883,
+          "avg_entry_price": 0.002685064188852981,
+          "value_usdc": 484.20599171689867,
+          "pnl_usdc": -515.7940082831013
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792169671,
+          "token_balance": 1.7258571460843086e-07,
+          "avg_entry_price": 0.0030136865214089713,
+          "value_usdc": 687.7304792175162,
+          "pnl_usdc": -312.2695207824838
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 257.64943323905027,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 257.64943323905027,
+          "pnl_usdc": -742.3505667609497
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 412.14859757797024,
+          "pnl_usdc": -587.8514024220298
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 2.0212218032611418e-07,
+          "token_balance": 122097.08837127406,
+          "avg_entry_price": 0.002795817072944229,
+          "value_usdc": 388.4573265961201,
+          "pnl_usdc": -611.5426734038799
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 301.57332114343444,
+          "token_balance": 1.1615338735282421e-07,
+          "avg_entry_price": 0.009144031688100001,
+          "value_usdc": 301.573321143804,
+          "pnl_usdc": -698.4266788561961
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.51720767179904,
+          "token_balance": 4.984758561477065e-07,
+          "avg_entry_price": 0.0097569394321,
+          "value_usdc": 272.517207673385,
+          "pnl_usdc": -727.482792326615
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 76765.06442699488,
+          "avg_entry_price": 0.0028689952541752503,
+          "value_usdc": 244.23147255646765,
+          "pnl_usdc": -755.7685274435323
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 1.4235442336030246e-07,
+          "token_balance": 45397.30842114512,
+          "avg_entry_price": 0.0029136313975642466,
+          "value_usdc": 144.4335594516258,
+          "pnl_usdc": -855.5664405483742
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 1005.5693593863909,
+          "pnl_usdc": 5.569359386390943
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 287.848597559665,
+          "token_balance": 50881.90834923927,
+          "avg_entry_price": 0.002964909513102822,
+          "value_usdc": 449.7316558932671,
+          "pnl_usdc": -550.2683441067329
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 62130.733787315505,
+          "avg_entry_price": 0.001709556707993134,
+          "value_usdc": 197.6716976290822,
+          "pnl_usdc": -802.3283023709178
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 28.74139166990244,
+          "token_balance": 64595.43202806264,
+          "avg_entry_price": 0.001864270019485686,
+          "value_usdc": 234.2546365605971,
+          "pnl_usdc": -765.7453634394029
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 1.7557800902068266e-07,
+          "token_balance": 135624.88592467085,
+          "avg_entry_price": 0.003115771783347114,
+          "value_usdc": 431.496617184045,
+          "pnl_usdc": -568.503382815955
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.00665096896984,
+          "pnl_usdc": -655.9933490310302
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 11.266156371426405,
+          "token_balance": 31818.772754391655,
+          "avg_entry_price": 0.0031510683727404756,
+          "value_usdc": 112.49899949807032,
+          "pnl_usdc": -887.5010005019296
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861303964,
+          "token_balance": 1.26776285469532e-07,
+          "avg_entry_price": 0.0038039550080665287,
+          "value_usdc": 431.821248613443,
+          "pnl_usdc": -568.178751386557
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 197.80159420481687,
+          "token_balance": 3.5596895031630993e-07,
+          "avg_entry_price": 0.007708741634093148,
+          "value_usdc": 197.80159420594939,
+          "pnl_usdc": -802.1984057940506
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.1296519509924,
+          "token_balance": 5.7669240050017834e-08,
+          "avg_entry_price": 0.016642594393528963,
+          "value_usdc": 212.1296519511759,
+          "pnl_usdc": -787.8703480488241
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 27046.27108848709,
+          "avg_entry_price": 0.0031815445527005343,
+          "value_usdc": 86.04891644928705,
+          "pnl_usdc": -913.951083550713
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 188.47346040893171,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 188.47346040893171,
+          "pnl_usdc": -811.5265395910683
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 44953.87724221405,
+          "avg_entry_price": 0.0017203752999888826,
+          "value_usdc": 143.0227632574973,
+          "pnl_usdc": -856.9772367425027
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 72.76885284256787,
+          "token_balance": 1.581647666171193e-07,
+          "avg_entry_price": 0.020055471832888964,
+          "value_usdc": 72.76885284307107,
+          "pnl_usdc": -927.231147156929
+        }
+      ]
+    },
+    {
+      "round": 7,
+      "price": 0.014738320383575964,
+      "event_type": "INFLUENCER_SHILL",
+      "event_magnitude": 0.35542454781642724,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 38390.52016263385,
+      "pool_token": 2604809.7180337687,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 72.68791217028205,
+        "p50": 1000.0,
+        "max": 33664.75633434487,
+        "avg": 2598.2460018519523
+      },
+      "agent_pnl_stats": {
+        "min": -927.3120878297179,
+        "p50": 0.0,
+        "max": 32664.75633434487,
+        "avg": 1598.246001851952
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 1055993.4726365637,
+          "avg_entry_price": 0.0016414665202639249,
+          "value_usdc": 15563.570122682633,
+          "pnl_usdc": 14563.570122682633
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 2284165.0512537425,
+          "avg_entry_price": 0.009060449128143955,
+          "value_usdc": 33664.75633434487,
+          "pnl_usdc": 32664.75633434487
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 3129.8151476194107,
+          "token_balance": 300278.36816115165,
+          "avg_entry_price": 0.010950526630244251,
+          "value_usdc": 7555.41394183584,
+          "pnl_usdc": 6555.41394183584
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 0.0005869074852853373,
+          "token_balance": 300970.91293384647,
+          "avg_entry_price": 0.013507040545289038,
+          "value_usdc": 4435.806327863862,
+          "pnl_usdc": 3435.806327863862
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 657878.6812696084,
+          "avg_entry_price": 0.0018418886066672608,
+          "value_usdc": 9696.026778075944,
+          "pnl_usdc": 8696.026778075944
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 1.535947831143858e-07,
+          "token_balance": 82118.3779829042,
+          "avg_entry_price": 0.014360779299378304,
+          "value_usdc": 1210.2869642452274,
+          "pnl_usdc": 210.2869642452274
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 1590.026679304252,
+          "token_balance": 153469.93550567795,
+          "avg_entry_price": 0.002037865456022727,
+          "value_usdc": 3851.9157580336737,
+          "pnl_usdc": 2851.9157580336737
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 287.443325366301,
+          "token_balance": 72783.13437369652,
+          "avg_entry_price": 0.0140722327818334,
+          "value_usdc": 1360.1444782867009,
+          "pnl_usdc": 360.14447828670086
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 3.5159700928488746e-07,
+          "token_balance": 272520.6729231188,
+          "avg_entry_price": 0.0038117824473239918,
+          "value_usdc": 4016.496989040237,
+          "pnl_usdc": 3016.496989040237
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 1.3666547715729394e-07,
+          "token_balance": 138538.6314996133,
+          "avg_entry_price": 0.0026450554548754788,
+          "value_usdc": 2041.826736680135,
+          "pnl_usdc": 1041.826736680135
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 2.8610031677089864e-07,
+          "token_balance": 50390.027493641915,
+          "avg_entry_price": 0.01508183695412383,
+          "value_usdc": 742.6643696245961,
+          "pnl_usdc": -257.33563037540387
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 3.590434971556533e-08,
+          "token_balance": 40732.57227948494,
+          "avg_entry_price": 0.015570550401477212,
+          "value_usdc": 600.3297003381185,
+          "pnl_usdc": -399.6702996618815
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 386339.20970096067,
+          "avg_entry_price": 0.0018673649895872215,
+          "value_usdc": 5693.991049310297,
+          "pnl_usdc": 4693.991049310297
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 187535.00463149228,
+          "avg_entry_price": 0.0024060496948311665,
+          "value_usdc": 2763.9509813943355,
+          "pnl_usdc": 1763.9509813943355
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 2.807959162964835e-07,
+          "token_balance": 31419.56852497635,
+          "avg_entry_price": 0.015963938918187866,
+          "value_usdc": 463.0716675156166,
+          "pnl_usdc": -536.9283324843834
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 191950.90614921908,
+          "avg_entry_price": 0.0025559897016516754,
+          "value_usdc": 2829.0339527449123,
+          "pnl_usdc": 1829.0339527449123
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 152192.11414896883,
+          "avg_entry_price": 0.002685064188852981,
+          "value_usdc": 2243.056138181267,
+          "pnl_usdc": 1243.0561381812672
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792197174,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.7304792197174,
+          "pnl_usdc": -312.2695207802826
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 2.3905028001536266e-07,
+          "token_balance": 15988.255504483823,
+          "avg_entry_price": 0.016169868249754166,
+          "value_usdc": 235.64003223860482,
+          "pnl_usdc": -764.3599677613952
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 1909.254444295641,
+          "pnl_usdc": 909.254444295641
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 1876.5153130797514,
+          "token_balance": 2.740562194958329e-07,
+          "avg_entry_price": 0.002795817072944229,
+          "value_usdc": 1876.5153130837905,
+          "pnl_usdc": 876.5153130837905
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 1.4343441989694838e-07,
+          "token_balance": 20300.106795654836,
+          "avg_entry_price": 0.014927349319370764,
+          "value_usdc": 299.189477918603,
+          "pnl_usdc": -700.810522081397
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.5172076792205,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 272.5172076792205,
+          "pnl_usdc": -727.4827923207795
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 76765.06442699488,
+          "avg_entry_price": 0.0028689952541752503,
+          "value_usdc": 1131.388113790901,
+          "pnl_usdc": 131.3881137909009
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 45397.30843065253,
+          "avg_entry_price": 0.002913631400080239,
+          "value_usdc": 669.0800762029711,
+          "pnl_usdc": -330.9199237970289
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 4658.241662687651,
+          "pnl_usdc": 3658.241662687651
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 1030.5453716274806,
+          "token_balance": 2.3926986614242196e-07,
+          "avg_entry_price": 0.002964909513102822,
+          "value_usdc": 1030.545371631007,
+          "pnl_usdc": 30.5453716310069
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 62130.733787315505,
+          "avg_entry_price": 0.001709556707993134,
+          "value_usdc": 915.702660224124,
+          "pnl_usdc": -84.29733977587603
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 66589.55243869452,
+          "avg_entry_price": 0.0022390924496286206,
+          "value_usdc": 981.418158040412,
+          "pnl_usdc": -18.58184195958802
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 135624.8859368437,
+          "avg_entry_price": 0.0031157717843581837,
+          "value_usdc": 1998.8830209231485,
+          "pnl_usdc": 998.8830209231485
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.00665097445494,
+          "pnl_usdc": -655.9933490255451
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 0.2661563714264048,
+          "token_balance": 32581.17189528793,
+          "avg_entry_price": 0.0034140361954107783,
+          "value_usdc": 480.45790623654085,
+          "pnl_usdc": -519.5420937634592
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861485863,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 431.82124861485863,
+          "pnl_usdc": -568.1787513851414
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 2.048168710189202e-07,
+          "token_balance": 13634.585081265046,
+          "avg_entry_price": 0.014539015958274382,
+          "value_usdc": 200.95088342962623,
+          "pnl_usdc": -799.0491165703738
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.12965195182187,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 212.12965195182187,
+          "pnl_usdc": -787.8703480481781
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 27046.27108848709,
+          "avg_entry_price": 0.0031815445527005343,
+          "value_usdc": 398.6166084831705,
+          "pnl_usdc": -601.3833915168295
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 4.0893172581490944e-07,
+          "token_balance": 12861.018601909745,
+          "avg_entry_price": 0.014682667955195076,
+          "value_usdc": 189.54981302300777,
+          "pnl_usdc": -810.4501869769922
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 44953.87724221405,
+          "avg_entry_price": 0.0017203752999888826,
+          "value_usdc": 662.5446452796949,
+          "pnl_usdc": -337.4553547203051
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 0.0,
+          "token_balance": 4931.899312711626,
+          "avg_entry_price": 0.014738320383746485,
+          "value_usdc": 72.68791217028205,
+          "pnl_usdc": -927.3120878297179
+        }
+      ]
+    },
+    {
+      "round": 8,
+      "price": 0.002510035143696849,
+      "event_type": "CALL_GROUP_EXIT",
+      "event_magnitude": 0.9151482912357077,
+      "headline": "Whale transfer screenshot spreads in Telegram chats.",
+      "pool_usdc": 15843.090429890404,
+      "pool_token": 6311899.843185567,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 12.351725133672517,
+        "p50": 470.71945229839696,
+        "max": 17907.624736229707,
+        "avg": 1061.6304980252926
+      },
+      "agent_pnl_stats": {
+        "min": -987.6482748663275,
+        "p50": -529.280547701603,
+        "max": 16907.624736229707,
+        "avg": 61.63049802529259
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 1055993.4726365637,
+          "avg_entry_price": 0.0016414665202639249,
+          "value_usdc": 2650.580727832252,
+          "pnl_usdc": 1650.5807278322518
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 17907.624736229707,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 17907.624736229707,
+          "pnl_usdc": 16907.624736229707
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 3739.150300813548,
+          "token_balance": 150139.18408065164,
+          "avg_entry_price": 0.010950526630244251,
+          "value_usdc": 4116.004929301954,
+          "pnl_usdc": 3116.004929301954
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 1118.4467186072875,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1118.4467186072875,
+          "pnl_usdc": 118.4467186072875
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 657878.6812696084,
+          "avg_entry_price": 0.0018418886066672608,
+          "value_usdc": 1651.2986102756552,
+          "pnl_usdc": 651.2986102756552
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 283.63312540434276,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 283.63312540434276,
+          "pnl_usdc": -716.3668745956572
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 2097.738930238489,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2097.738930238489,
+          "pnl_usdc": 1097.738930238489
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 518.5945591007549,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 518.5945591007549,
+          "pnl_usdc": -481.40544089924515
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 815.0878247135051,
+          "token_balance": 1.1880183592438698e-07,
+          "avg_entry_price": 0.0038117824473239918,
+          "value_usdc": 815.0878247138033,
+          "pnl_usdc": -184.91217528619666
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 138538.63154722156,
+          "avg_entry_price": 0.0026450554549500406,
+          "value_usdc": 347.7368339431951,
+          "pnl_usdc": -652.263166056805
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 142.57326765788332,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 142.57326765788332,
+          "pnl_usdc": -857.4267323421167
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 113.50402267521463,
+          "token_balance": 4.849425749853253e-07,
+          "avg_entry_price": 0.015570550401477212,
+          "value_usdc": 113.50402267643184,
+          "pnl_usdc": -886.4959773235681
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 386339.20970096067,
+          "avg_entry_price": 0.0018673649895872215,
+          "value_usdc": 969.7249937374779,
+          "pnl_usdc": -30.275006262522083
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 187535.00463149228,
+          "avg_entry_price": 0.0024060496948311665,
+          "value_usdc": 470.71945229839696,
+          "pnl_usdc": -529.280547701603
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 86.50880110797368,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 86.50880110797368,
+          "pnl_usdc": -913.4911988920263
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 191950.90614921908,
+          "avg_entry_price": 0.0025559897016516754,
+          "value_usdc": 481.80352029899547,
+          "pnl_usdc": -518.1964797010046
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 406.6342708830034,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 406.6342708830034,
+          "pnl_usdc": -593.3657291169966
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792197174,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.7304792197174,
+          "pnl_usdc": -312.2695207802826
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 41.56306858890872,
+          "token_balance": 4.838220775127411e-07,
+          "avg_entry_price": 0.016169868249754166,
+          "value_usdc": 41.56306859012313,
+          "pnl_usdc": -958.4369314098768
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 325.1588803010333,
+          "pnl_usdc": -674.8411196989666
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 1876.5153130804626,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1876.5153130804626,
+          "pnl_usdc": 876.5153130804626
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 52.465255492264816,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 52.465255492264816,
+          "pnl_usdc": -947.5347445077352
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.5172076792205,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 272.5172076792205,
+          "pnl_usdc": -727.4827923207795
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 76765.06442699488,
+          "avg_entry_price": 0.0028689952541752503,
+          "value_usdc": 192.68300951990997,
+          "pnl_usdc": -807.31699048009
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 45397.30843065253,
+          "avg_entry_price": 0.002913631400080239,
+          "value_usdc": 113.94883959018308,
+          "pnl_usdc": -886.0511604098169
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 793.3299030606313,
+          "pnl_usdc": -206.6700969393687
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 1030.5453716280972,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1030.5453716280972,
+          "pnl_usdc": 30.5453716280972
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 62130.733787315505,
+          "avg_entry_price": 0.001709556707993134,
+          "value_usdc": 155.95032530983514,
+          "pnl_usdc": -844.0496746901649
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 66589.55243869452,
+          "avg_entry_price": 0.0022390924496286206,
+          "value_usdc": 167.14211682416746,
+          "pnl_usdc": -832.8578831758325
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 135624.8859368437,
+          "avg_entry_price": 0.0031157717843581837,
+          "value_usdc": 340.4232300613542,
+          "pnl_usdc": -659.5767699386458
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.0066509686511,
+          "pnl_usdc": -655.9933490313489
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 83.76168404852979,
+          "token_balance": 2.879314706660807e-07,
+          "avg_entry_price": 0.0034140361954107783,
+          "value_usdc": 83.76168404925251,
+          "pnl_usdc": -916.2383159507475
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861485863,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 431.82124861485863,
+          "pnl_usdc": -568.1787513851414
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 34.684358390667086,
+          "token_balance": 2.650467649800703e-07,
+          "avg_entry_price": 0.014539015958274382,
+          "value_usdc": 34.68435839133236,
+          "pnl_usdc": -965.3156416086676
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.12965195182187,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 212.12965195182187,
+          "pnl_usdc": -787.8703480481781
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 68.35834439239807,
+          "token_balance": 4.870889824815094e-07,
+          "avg_entry_price": 0.0031815445527005343,
+          "value_usdc": 68.35834439362068,
+          "pnl_usdc": -931.6416556063793
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 32.30063707332846,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 32.30063707332846,
+          "pnl_usdc": -967.6993629266715
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 44953.87724221405,
+          "avg_entry_price": 0.0017203752999888826,
+          "value_usdc": 112.83581172339125,
+          "pnl_usdc": -887.1641882766088
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 12.351725133672517,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12.351725133672517,
+          "pnl_usdc": -987.6482748663275
+        }
+      ]
+    },
+    {
+      "round": 9,
+      "price": 0.0011181617600787622,
+      "event_type": "PAID_KOL_THREAD",
+      "event_magnitude": 0.38539066728880084,
+      "headline": "Raid group coordinates replies under major CT accounts.",
+      "pool_usdc": 10574.316810455237,
+      "pool_token": 9456875.729420753,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 12.351725133672517,
+        "p50": 353.4098568129554,
+        "max": 17907.624736229707,
+        "avg": 994.9825936012622
+      },
+      "agent_pnl_stats": {
+        "min": -987.6482748663275,
+        "p50": -646.5901431870445,
+        "max": 16907.624736229707,
+        "avg": -5.017406398737869
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 2264.8515349145073,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2264.8515349145073,
+          "pnl_usdc": 1264.8515349145073
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 17907.624736229707,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 17907.624736229707,
+          "pnl_usdc": 16907.624736229707
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 4009.631778710045,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 4009.631778710045,
+          "pnl_usdc": 3009.631778710045
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 1118.4467186072875,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1118.4467186072875,
+          "pnl_usdc": 118.4467186072875
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 1068.3334485825053,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1068.3334485825053,
+          "pnl_usdc": 68.3334485825053
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 283.63312540434276,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 283.63312540434276,
+          "pnl_usdc": -716.3668745956572
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 2097.738930238489,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2097.738930238489,
+          "pnl_usdc": 1097.738930238489
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 518.5945591007549,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 518.5945591007549,
+          "pnl_usdc": -481.40544089924515
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 815.0878247136834,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 815.0878247136834,
+          "pnl_usdc": -184.9121752863166
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 203.4733004393438,
+          "token_balance": 2.2156746126711369e-07,
+          "avg_entry_price": 0.0026450554549500406,
+          "value_usdc": 203.47330043959155,
+          "pnl_usdc": -796.5266995604085
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 142.57326765788332,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 142.57326765788332,
+          "pnl_usdc": -857.4267323421167
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 113.50402267521463,
+          "token_balance": 4.849425749853253e-07,
+          "avg_entry_price": 0.015570550401477212,
+          "value_usdc": 113.50402267575687,
+          "pnl_usdc": -886.4959773242431
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 533.2656056178839,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 533.2656056178839,
+          "pnl_usdc": -466.7343943821161
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 242.17799456217654,
+          "token_balance": 4.922912921756506e-07,
+          "avg_entry_price": 0.0024060496948311665,
+          "value_usdc": 242.177994562727,
+          "pnl_usdc": -757.822005437273
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 86.50880110797368,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 86.50880110797368,
+          "pnl_usdc": -913.4911988920263
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 237.5426933064009,
+          "token_balance": 2.1909363567829132e-07,
+          "avg_entry_price": 0.0025559897016516754,
+          "value_usdc": 237.5426933066459,
+          "pnl_usdc": -762.4573066933541
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 406.6342708830034,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 406.6342708830034,
+          "pnl_usdc": -593.3657291169966
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792197174,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.7304792197174,
+          "pnl_usdc": -312.2695207802826
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 41.56306858890872,
+          "token_balance": 4.838220775127411e-07,
+          "avg_entry_price": 0.016169868249754166,
+          "value_usdc": 41.56306858944971,
+          "pnl_usdc": -958.4369314105503
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 144.85065152002295,
+          "pnl_usdc": -855.1493484799771
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 1876.5153130804626,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1876.5153130804626,
+          "pnl_usdc": 876.5153130804626
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 52.465255492264816,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 52.465255492264816,
+          "pnl_usdc": -947.5347445077352
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.5172076792205,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 272.5172076792205,
+          "pnl_usdc": -727.4827923207795
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 92.21616796094531,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 92.21616796094531,
+          "pnl_usdc": -907.7838320390547
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 45397.30843065253,
+          "avg_entry_price": 0.002913631400080239,
+          "value_usdc": 50.76153429765686,
+          "pnl_usdc": -949.2384657023431
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 353.4098568129554,
+          "pnl_usdc": -646.5901431870445
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 1030.5453716280972,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1030.5453716280972,
+          "pnl_usdc": 30.5453716280972
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 73.51411496550281,
+          "token_balance": 3.155073500238359e-07,
+          "avg_entry_price": 0.001709556707993134,
+          "value_usdc": 73.5141149658556,
+          "pnl_usdc": -926.4858850341444
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 77.69989830818304,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 77.69989830818304,
+          "pnl_usdc": -922.300101691817
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 154.8638326837281,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 154.8638326837281,
+          "pnl_usdc": -845.1361673162719
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.0066509679905,
+          "pnl_usdc": -655.9933490320095
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 83.76168404885357,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 83.76168404885357,
+          "pnl_usdc": -916.2383159511464
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861485863,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 431.82124861485863,
+          "pnl_usdc": -568.1787513851414
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 34.684358390667086,
+          "token_balance": 2.650467649800703e-07,
+          "avg_entry_price": 0.014539015958274382,
+          "value_usdc": 34.68435839096345,
+          "pnl_usdc": -965.3156416090366
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.12965195182187,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 212.12965195182187,
+          "pnl_usdc": -787.8703480481781
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 68.35834439239807,
+          "token_balance": 4.870889824815094e-07,
+          "avg_entry_price": 0.0031815445527005343,
+          "value_usdc": 68.35834439294271,
+          "pnl_usdc": -931.6416556070573
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 32.30063707332846,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 32.30063707332846,
+          "pnl_usdc": -967.6993629266715
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 50.35355019699091,
+          "token_balance": 2.1404412109404802e-07,
+          "avg_entry_price": 0.0017203752999888826,
+          "value_usdc": 50.35355019723025,
+          "pnl_usdc": -949.6464498027698
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 12.351725133672517,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12.351725133672517,
+          "pnl_usdc": -987.6482748663275
+        }
+      ]
+    },
+    {
+      "round": 10,
+      "price": 0.008980875890163722,
+      "event_type": "TG_CALLS_PUMP",
+      "event_magnitude": 0.7372976126619076,
+      "headline": "Mid-tier influencer posts a paid-looking shill thread.",
+      "pool_usdc": 29968.10953357539,
+      "pool_token": 3336880.489173431,
+      "api_errors": 0,
+      "agent_value_stats": {
+        "min": 12.351725133672517,
+        "p50": 431.82124861485863,
+        "max": 40573.72060078532,
+        "avg": 1782.3616729870555
+      },
+      "agent_pnl_stats": {
+        "min": -987.6482748663275,
+        "p50": -568.1787513851414,
+        "max": 39573.72060078532,
+        "avg": 782.3616729870555
+      },
+      "agents": [
+        {
+          "agent_id": "Agent_0000",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 1664085.2737712758,
+          "avg_entry_price": 0.0016466981710591252,
+          "value_usdc": 14944.943314388947,
+          "pnl_usdc": 13944.943314388947
+        },
+        {
+          "agent_id": "Agent_0001",
+          "persona": "Degen",
+          "usdc_balance": 2907.624736229707,
+          "token_balance": 4194033.669456371,
+          "avg_entry_price": 0.0077213814218769355,
+          "value_usdc": 40573.72060078532,
+          "pnl_usdc": 39573.72060078532
+        },
+        {
+          "agent_id": "Agent_0002",
+          "persona": "Degen",
+          "usdc_balance": 4009.631778710045,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 4009.631778710045,
+          "pnl_usdc": 3009.631778710045
+        },
+        {
+          "agent_id": "Agent_0003",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 138844.30417727027,
+          "avg_entry_price": 0.00835352492857771,
+          "value_usdc": 1246.9434638722046,
+          "pnl_usdc": 246.94346387220457
+        },
+        {
+          "agent_id": "Agent_0004",
+          "persona": "Sniper",
+          "usdc_balance": 2444.8595485937512,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2444.8595485937512,
+          "pnl_usdc": 1444.8595485937512
+        },
+        {
+          "agent_id": "Agent_0005",
+          "persona": "Paper_hands",
+          "usdc_balance": 1068.3334485825053,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1068.3334485825053,
+          "pnl_usdc": 68.3334485825053
+        },
+        {
+          "agent_id": "Agent_0006",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0007",
+          "persona": "Degen",
+          "usdc_balance": 283.63312540434276,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 283.63312540434276,
+          "pnl_usdc": -716.3668745956572
+        },
+        {
+          "agent_id": "Agent_0008",
+          "persona": "Flipper",
+          "usdc_balance": 2097.738930238489,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 2097.738930238489,
+          "pnl_usdc": 1097.738930238489
+        },
+        {
+          "agent_id": "Agent_0009",
+          "persona": "Degen",
+          "usdc_balance": 518.5945591007549,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 518.5945591007549,
+          "pnl_usdc": -481.40544089924515
+        },
+        {
+          "agent_id": "Agent_0010",
+          "persona": "Degen",
+          "usdc_balance": 815.0878247136834,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 815.0878247136834,
+          "pnl_usdc": -184.9121752863166
+        },
+        {
+          "agent_id": "Agent_0011",
+          "persona": "Paper_hands",
+          "usdc_balance": 203.4733004393438,
+          "token_balance": 2.2156746126711369e-07,
+          "avg_entry_price": 0.0026450554549500406,
+          "value_usdc": 203.47330044133366,
+          "pnl_usdc": -796.5266995586663
+        },
+        {
+          "agent_id": "Agent_0012",
+          "persona": "Degen",
+          "usdc_balance": 142.57326765788332,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 142.57326765788332,
+          "pnl_usdc": -857.4267323421167
+        },
+        {
+          "agent_id": "Agent_0013",
+          "persona": "Degen",
+          "usdc_balance": 0.0,
+          "token_balance": 13493.963794238589,
+          "avg_entry_price": 0.008419067077111058,
+          "value_usdc": 121.18761410241952,
+          "pnl_usdc": -878.8123858975805
+        },
+        {
+          "agent_id": "Agent_0014",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 62013.89740312146,
+          "avg_entry_price": 0.008730426115975106,
+          "value_usdc": 556.9391160427801,
+          "pnl_usdc": -443.06088395721986
+        },
+        {
+          "agent_id": "Agent_0015",
+          "persona": "Paper_hands",
+          "usdc_balance": 242.17799456217654,
+          "token_balance": 4.922912921756506e-07,
+          "avg_entry_price": 0.0024060496948311665,
+          "value_usdc": 242.17799456659773,
+          "pnl_usdc": -757.8220054334023
+        },
+        {
+          "agent_id": "Agent_0016",
+          "persona": "Degen",
+          "usdc_balance": 86.50880110797368,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 86.50880110797368,
+          "pnl_usdc": -913.4911988920263
+        },
+        {
+          "agent_id": "Agent_0017",
+          "persona": "Paper_hands",
+          "usdc_balance": 237.5426933064009,
+          "token_balance": 2.1909363567829132e-07,
+          "avg_entry_price": 0.0025559897016516754,
+          "value_usdc": 237.54269330836857,
+          "pnl_usdc": -762.4573066916314
+        },
+        {
+          "agent_id": "Agent_0018",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0019",
+          "persona": "Degen",
+          "usdc_balance": 6.63427088300341,
+          "token_balance": 45071.00461114524,
+          "avg_entry_price": 0.008967685751216377,
+          "value_usdc": 411.4113695406956,
+          "pnl_usdc": -588.5886304593043
+        },
+        {
+          "agent_id": "Agent_0020",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0021",
+          "persona": "Sniper",
+          "usdc_balance": 937.2921888562469,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 937.2921888562469,
+          "pnl_usdc": -62.70781114375313
+        },
+        {
+          "agent_id": "Agent_0022",
+          "persona": "Flipper",
+          "usdc_balance": 687.7304792197174,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 687.7304792197174,
+          "pnl_usdc": -312.2695207802826
+        },
+        {
+          "agent_id": "Agent_0023",
+          "persona": "Degen",
+          "usdc_balance": 41.56306858890872,
+          "token_balance": 4.838220775127411e-07,
+          "avg_entry_price": 0.016169868249754166,
+          "value_usdc": 41.56306859325387,
+          "pnl_usdc": -958.4369314067461
+        },
+        {
+          "agent_id": "Agent_0024",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 129543.55683726817,
+          "avg_entry_price": 0.007977856740100002,
+          "value_usdc": 1163.4146063258754,
+          "pnl_usdc": 163.4146063258754
+        },
+        {
+          "agent_id": "Agent_0025",
+          "persona": "Flipper",
+          "usdc_balance": 1876.5153130804626,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1876.5153130804626,
+          "pnl_usdc": 876.5153130804626
+        },
+        {
+          "agent_id": "Agent_0026",
+          "persona": "Degen",
+          "usdc_balance": 4.922648173533162e-07,
+          "token_balance": 5822.75651582377,
+          "avg_entry_price": 0.008999041434240733,
+          "value_usdc": 52.29345409952023,
+          "pnl_usdc": -947.7065459004798
+        },
+        {
+          "agent_id": "Agent_0027",
+          "persona": "Degen",
+          "usdc_balance": 272.5172076792205,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 272.5172076792205,
+          "pnl_usdc": -727.4827923207795
+        },
+        {
+          "agent_id": "Agent_0028",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0029",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 10185.374027865939,
+          "avg_entry_price": 0.009054286736919949,
+          "value_usdc": 91.47358003916096,
+          "pnl_usdc": -908.526419960839
+        },
+        {
+          "agent_id": "Agent_0030",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0031",
+          "persona": "Sniper",
+          "usdc_balance": 924.2470646863749,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 924.2470646863749,
+          "pnl_usdc": -75.75293531362513
+        },
+        {
+          "agent_id": "Agent_0032",
+          "persona": "Paper_hands",
+          "usdc_balance": 404.3008625830298,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 404.3008625830298,
+          "pnl_usdc": -595.6991374169702
+        },
+        {
+          "agent_id": "Agent_0033",
+          "persona": "Diamond",
+          "usdc_balance": 0.0,
+          "token_balance": 316063.26511117816,
+          "avg_entry_price": 0.003237161574988696,
+          "value_usdc": 2838.5249574034046,
+          "pnl_usdc": 1838.5249574034046
+        },
+        {
+          "agent_id": "Agent_0034",
+          "persona": "Flipper",
+          "usdc_balance": 1030.5453716280972,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1030.5453716280972,
+          "pnl_usdc": 30.5453716280972
+        },
+        {
+          "agent_id": "Agent_0035",
+          "persona": "Paper_hands",
+          "usdc_balance": 73.51411496550281,
+          "token_balance": 3.155073500238359e-07,
+          "avg_entry_price": 0.001709556707993134,
+          "value_usdc": 73.51411496833634,
+          "pnl_usdc": -926.4858850316637
+        },
+        {
+          "agent_id": "Agent_0036",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0037",
+          "persona": "Paper_hands",
+          "usdc_balance": 3.0818303287105664e-07,
+          "token_balance": 8767.569354170468,
+          "avg_entry_price": 0.008858663967416058,
+          "value_usdc": 78.74045253639089,
+          "pnl_usdc": -921.2595474636091
+        },
+        {
+          "agent_id": "Agent_0038",
+          "persona": "Stonks",
+          "usdc_balance": 1000.0,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 1000.0,
+          "pnl_usdc": 0.0
+        },
+        {
+          "agent_id": "Agent_0039",
+          "persona": "Paper_hands",
+          "usdc_balance": 0.0,
+          "token_balance": 17339.23126444174,
+          "avg_entry_price": 0.008950811619069113,
+          "value_usdc": 155.72148401679783,
+          "pnl_usdc": -844.2785159832022
+        },
+        {
+          "agent_id": "Agent_0040",
+          "persona": "Sniper",
+          "usdc_balance": 214.68766216372387,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 214.68766216372387,
+          "pnl_usdc": -785.3123378362761
+        },
+        {
+          "agent_id": "Agent_0041",
+          "persona": "Degen",
+          "usdc_balance": 344.0066509674598,
+          "token_balance": 4.7462526708841324e-07,
+          "avg_entry_price": 0.005058316630271211,
+          "value_usdc": 344.00665097172237,
+          "pnl_usdc": -655.9933490282776
+        },
+        {
+          "agent_id": "Agent_0042",
+          "persona": "Degen",
+          "usdc_balance": 83.76168404885357,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 83.76168404885357,
+          "pnl_usdc": -916.2383159511464
+        },
+        {
+          "agent_id": "Agent_0043",
+          "persona": "Flipper",
+          "usdc_balance": 431.82124861485863,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 431.82124861485863,
+          "pnl_usdc": -568.1787513851414
+        },
+        {
+          "agent_id": "Agent_0044",
+          "persona": "Degen",
+          "usdc_balance": 34.684358390667086,
+          "token_balance": 2.650467649800703e-07,
+          "avg_entry_price": 0.014539015958274382,
+          "value_usdc": 34.68435839304744,
+          "pnl_usdc": -965.3156416069526
+        },
+        {
+          "agent_id": "Agent_0045",
+          "persona": "Degen",
+          "usdc_balance": 212.12965195182187,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 212.12965195182187,
+          "pnl_usdc": -787.8703480481781
+        },
+        {
+          "agent_id": "Agent_0046",
+          "persona": "Degen",
+          "usdc_balance": 68.35834439239807,
+          "token_balance": 4.870889824815094e-07,
+          "avg_entry_price": 0.0031815445527005343,
+          "value_usdc": 68.35834439677255,
+          "pnl_usdc": -931.6416556032275
+        },
+        {
+          "agent_id": "Agent_0047",
+          "persona": "Degen",
+          "usdc_balance": 32.30063707332846,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 32.30063707332846,
+          "pnl_usdc": -967.6993629266715
+        },
+        {
+          "agent_id": "Agent_0048",
+          "persona": "Paper_hands",
+          "usdc_balance": 1.9699091069469432e-07,
+          "token_balance": 5599.312377657581,
+          "avg_entry_price": 0.008980875889886176,
+          "value_usdc": 50.28672973099118,
+          "pnl_usdc": -949.7132702690088
+        },
+        {
+          "agent_id": "Agent_0049",
+          "persona": "Flipper",
+          "usdc_balance": 12.351725133672517,
+          "token_balance": 0.0,
+          "avg_entry_price": null,
+          "value_usdc": 12.351725133672517,
+          "pnl_usdc": -987.6482748663275
+        }
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "agent_id": "Agent_0000",
+      "persona": "Paper_hands",
+      "usdc_balance": 0.0,
+      "token_balance": 1664085.2737712758,
+      "avg_entry_price": 0.0016466981710591252,
+      "final_value_usdc": 14944.943314388947,
+      "pnl_usdc": 13944.943314388947
+    },
+    {
+      "agent_id": "Agent_0001",
+      "persona": "Degen",
+      "usdc_balance": 2907.624736229707,
+      "token_balance": 4194033.669456371,
+      "avg_entry_price": 0.0077213814218769355,
+      "final_value_usdc": 40573.72060078532,
+      "pnl_usdc": 39573.72060078532
+    },
+    {
+      "agent_id": "Agent_0002",
+      "persona": "Degen",
+      "usdc_balance": 4009.631778710045,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 4009.631778710045,
+      "pnl_usdc": 3009.631778710045
+    },
+    {
+      "agent_id": "Agent_0003",
+      "persona": "Degen",
+      "usdc_balance": 0.0,
+      "token_balance": 138844.30417727027,
+      "avg_entry_price": 0.00835352492857771,
+      "final_value_usdc": 1246.9434638722046,
+      "pnl_usdc": 246.94346387220457
+    },
+    {
+      "agent_id": "Agent_0004",
+      "persona": "Sniper",
+      "usdc_balance": 2444.8595485937512,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 2444.8595485937512,
+      "pnl_usdc": 1444.8595485937512
+    },
+    {
+      "agent_id": "Agent_0005",
+      "persona": "Paper_hands",
+      "usdc_balance": 1068.3334485825053,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1068.3334485825053,
+      "pnl_usdc": 68.3334485825053
+    },
+    {
+      "agent_id": "Agent_0006",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0007",
+      "persona": "Degen",
+      "usdc_balance": 283.63312540434276,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 283.63312540434276,
+      "pnl_usdc": -716.3668745956572
+    },
+    {
+      "agent_id": "Agent_0008",
+      "persona": "Flipper",
+      "usdc_balance": 2097.738930238489,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 2097.738930238489,
+      "pnl_usdc": 1097.738930238489
+    },
+    {
+      "agent_id": "Agent_0009",
+      "persona": "Degen",
+      "usdc_balance": 518.5945591007549,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 518.5945591007549,
+      "pnl_usdc": -481.40544089924515
+    },
+    {
+      "agent_id": "Agent_0010",
+      "persona": "Degen",
+      "usdc_balance": 815.0878247136834,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 815.0878247136834,
+      "pnl_usdc": -184.9121752863166
+    },
+    {
+      "agent_id": "Agent_0011",
+      "persona": "Paper_hands",
+      "usdc_balance": 203.4733004393438,
+      "token_balance": 2.2156746126711369e-07,
+      "avg_entry_price": 0.0026450554549500406,
+      "final_value_usdc": 203.47330044133366,
+      "pnl_usdc": -796.5266995586663
+    },
+    {
+      "agent_id": "Agent_0012",
+      "persona": "Degen",
+      "usdc_balance": 142.57326765788332,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 142.57326765788332,
+      "pnl_usdc": -857.4267323421167
+    },
+    {
+      "agent_id": "Agent_0013",
+      "persona": "Degen",
+      "usdc_balance": 0.0,
+      "token_balance": 13493.963794238589,
+      "avg_entry_price": 0.008419067077111058,
+      "final_value_usdc": 121.18761410241952,
+      "pnl_usdc": -878.8123858975805
+    },
+    {
+      "agent_id": "Agent_0014",
+      "persona": "Paper_hands",
+      "usdc_balance": 0.0,
+      "token_balance": 62013.89740312146,
+      "avg_entry_price": 0.008730426115975106,
+      "final_value_usdc": 556.9391160427801,
+      "pnl_usdc": -443.06088395721986
+    },
+    {
+      "agent_id": "Agent_0015",
+      "persona": "Paper_hands",
+      "usdc_balance": 242.17799456217654,
+      "token_balance": 4.922912921756506e-07,
+      "avg_entry_price": 0.0024060496948311665,
+      "final_value_usdc": 242.17799456659773,
+      "pnl_usdc": -757.8220054334023
+    },
+    {
+      "agent_id": "Agent_0016",
+      "persona": "Degen",
+      "usdc_balance": 86.50880110797368,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 86.50880110797368,
+      "pnl_usdc": -913.4911988920263
+    },
+    {
+      "agent_id": "Agent_0017",
+      "persona": "Paper_hands",
+      "usdc_balance": 237.5426933064009,
+      "token_balance": 2.1909363567829132e-07,
+      "avg_entry_price": 0.0025559897016516754,
+      "final_value_usdc": 237.54269330836857,
+      "pnl_usdc": -762.4573066916314
+    },
+    {
+      "agent_id": "Agent_0018",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0019",
+      "persona": "Degen",
+      "usdc_balance": 6.63427088300341,
+      "token_balance": 45071.00461114524,
+      "avg_entry_price": 0.008967685751216377,
+      "final_value_usdc": 411.4113695406956,
+      "pnl_usdc": -588.5886304593043
+    },
+    {
+      "agent_id": "Agent_0020",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0021",
+      "persona": "Sniper",
+      "usdc_balance": 937.2921888562469,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 937.2921888562469,
+      "pnl_usdc": -62.70781114375313
+    },
+    {
+      "agent_id": "Agent_0022",
+      "persona": "Flipper",
+      "usdc_balance": 687.7304792197174,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 687.7304792197174,
+      "pnl_usdc": -312.2695207802826
+    },
+    {
+      "agent_id": "Agent_0023",
+      "persona": "Degen",
+      "usdc_balance": 41.56306858890872,
+      "token_balance": 4.838220775127411e-07,
+      "avg_entry_price": 0.016169868249754166,
+      "final_value_usdc": 41.56306859325387,
+      "pnl_usdc": -958.4369314067461
+    },
+    {
+      "agent_id": "Agent_0024",
+      "persona": "Diamond",
+      "usdc_balance": 0.0,
+      "token_balance": 129543.55683726817,
+      "avg_entry_price": 0.007977856740100002,
+      "final_value_usdc": 1163.4146063258754,
+      "pnl_usdc": 163.4146063258754
+    },
+    {
+      "agent_id": "Agent_0025",
+      "persona": "Flipper",
+      "usdc_balance": 1876.5153130804626,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1876.5153130804626,
+      "pnl_usdc": 876.5153130804626
+    },
+    {
+      "agent_id": "Agent_0026",
+      "persona": "Degen",
+      "usdc_balance": 4.922648173533162e-07,
+      "token_balance": 5822.75651582377,
+      "avg_entry_price": 0.008999041434240733,
+      "final_value_usdc": 52.29345409952023,
+      "pnl_usdc": -947.7065459004798
+    },
+    {
+      "agent_id": "Agent_0027",
+      "persona": "Degen",
+      "usdc_balance": 272.5172076792205,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 272.5172076792205,
+      "pnl_usdc": -727.4827923207795
+    },
+    {
+      "agent_id": "Agent_0028",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0029",
+      "persona": "Paper_hands",
+      "usdc_balance": 0.0,
+      "token_balance": 10185.374027865939,
+      "avg_entry_price": 0.009054286736919949,
+      "final_value_usdc": 91.47358003916096,
+      "pnl_usdc": -908.526419960839
+    },
+    {
+      "agent_id": "Agent_0030",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0031",
+      "persona": "Sniper",
+      "usdc_balance": 924.2470646863749,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 924.2470646863749,
+      "pnl_usdc": -75.75293531362513
+    },
+    {
+      "agent_id": "Agent_0032",
+      "persona": "Paper_hands",
+      "usdc_balance": 404.3008625830298,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 404.3008625830298,
+      "pnl_usdc": -595.6991374169702
+    },
+    {
+      "agent_id": "Agent_0033",
+      "persona": "Diamond",
+      "usdc_balance": 0.0,
+      "token_balance": 316063.26511117816,
+      "avg_entry_price": 0.003237161574988696,
+      "final_value_usdc": 2838.5249574034046,
+      "pnl_usdc": 1838.5249574034046
+    },
+    {
+      "agent_id": "Agent_0034",
+      "persona": "Flipper",
+      "usdc_balance": 1030.5453716280972,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1030.5453716280972,
+      "pnl_usdc": 30.5453716280972
+    },
+    {
+      "agent_id": "Agent_0035",
+      "persona": "Paper_hands",
+      "usdc_balance": 73.51411496550281,
+      "token_balance": 3.155073500238359e-07,
+      "avg_entry_price": 0.001709556707993134,
+      "final_value_usdc": 73.51411496833634,
+      "pnl_usdc": -926.4858850316637
+    },
+    {
+      "agent_id": "Agent_0036",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0037",
+      "persona": "Paper_hands",
+      "usdc_balance": 3.0818303287105664e-07,
+      "token_balance": 8767.569354170468,
+      "avg_entry_price": 0.008858663967416058,
+      "final_value_usdc": 78.74045253639089,
+      "pnl_usdc": -921.2595474636091
+    },
+    {
+      "agent_id": "Agent_0038",
+      "persona": "Stonks",
+      "usdc_balance": 1000.0,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 1000.0,
+      "pnl_usdc": 0.0
+    },
+    {
+      "agent_id": "Agent_0039",
+      "persona": "Paper_hands",
+      "usdc_balance": 0.0,
+      "token_balance": 17339.23126444174,
+      "avg_entry_price": 0.008950811619069113,
+      "final_value_usdc": 155.72148401679783,
+      "pnl_usdc": -844.2785159832022
+    },
+    {
+      "agent_id": "Agent_0040",
+      "persona": "Sniper",
+      "usdc_balance": 214.68766216372387,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 214.68766216372387,
+      "pnl_usdc": -785.3123378362761
+    },
+    {
+      "agent_id": "Agent_0041",
+      "persona": "Degen",
+      "usdc_balance": 344.0066509674598,
+      "token_balance": 4.7462526708841324e-07,
+      "avg_entry_price": 0.005058316630271211,
+      "final_value_usdc": 344.00665097172237,
+      "pnl_usdc": -655.9933490282776
+    },
+    {
+      "agent_id": "Agent_0042",
+      "persona": "Degen",
+      "usdc_balance": 83.76168404885357,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 83.76168404885357,
+      "pnl_usdc": -916.2383159511464
+    },
+    {
+      "agent_id": "Agent_0043",
+      "persona": "Flipper",
+      "usdc_balance": 431.82124861485863,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 431.82124861485863,
+      "pnl_usdc": -568.1787513851414
+    },
+    {
+      "agent_id": "Agent_0044",
+      "persona": "Degen",
+      "usdc_balance": 34.684358390667086,
+      "token_balance": 2.650467649800703e-07,
+      "avg_entry_price": 0.014539015958274382,
+      "final_value_usdc": 34.68435839304744,
+      "pnl_usdc": -965.3156416069526
+    },
+    {
+      "agent_id": "Agent_0045",
+      "persona": "Degen",
+      "usdc_balance": 212.12965195182187,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 212.12965195182187,
+      "pnl_usdc": -787.8703480481781
+    },
+    {
+      "agent_id": "Agent_0046",
+      "persona": "Degen",
+      "usdc_balance": 68.35834439239807,
+      "token_balance": 4.870889824815094e-07,
+      "avg_entry_price": 0.0031815445527005343,
+      "final_value_usdc": 68.35834439677255,
+      "pnl_usdc": -931.6416556032275
+    },
+    {
+      "agent_id": "Agent_0047",
+      "persona": "Degen",
+      "usdc_balance": 32.30063707332846,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 32.30063707332846,
+      "pnl_usdc": -967.6993629266715
+    },
+    {
+      "agent_id": "Agent_0048",
+      "persona": "Paper_hands",
+      "usdc_balance": 1.9699091069469432e-07,
+      "token_balance": 5599.312377657581,
+      "avg_entry_price": 0.008980875889886176,
+      "final_value_usdc": 50.28672973099118,
+      "pnl_usdc": -949.7132702690088
+    },
+    {
+      "agent_id": "Agent_0049",
+      "persona": "Flipper",
+      "usdc_balance": 12.351725133672517,
+      "token_balance": 0.0,
+      "avg_entry_price": null,
+      "final_value_usdc": 12.351725133672517,
+      "pnl_usdc": -987.6482748663275
+    }
+  ]
+}

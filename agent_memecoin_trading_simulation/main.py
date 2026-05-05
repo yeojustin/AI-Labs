@@ -12,7 +12,8 @@ import aiohttp
 from amm import pool_buy, pool_new, pool_price, pool_sell
 from constants import BASE_EVENT_MIX, DEFAULTS, PERSONAS, PERSONA_PROMPTS, SCENARIOS
 
-GEMINI_API_KEY = "AIzaSyD_l8nS05X6y_o5a4YMOYm3Wg6eXO1_5Sw"
+# Add your own api key
+GEMINI_API_KEY = ""
 
 def get_env_value(env_key, default_value, value_type="str"):
     raw_value = os.getenv(env_key)
@@ -75,7 +76,6 @@ def load_config():
         "fee_bps": get_env_value("FEE_BPS", DEFAULTS["fee_bps"], "float"),
         "personas": persona_weights,
         "save_path": get_env_value("SAVE_PATH", DEFAULTS["save_path"], "str"),
-        "save_agents": get_env_value("SAVE_AGENTS", DEFAULTS["save_agents"], "bool"),
         "log_every": get_env_value("LOG_EVERY", DEFAULTS["log_every"], "int"),
         "gemini_model": get_env_value("GEMINI_MODEL", DEFAULTS["gemini_model"], "str"),
         "max_concurrent": get_env_value("MAX_CONCURRENT", DEFAULTS["max_concurrent"], "int"),
@@ -152,6 +152,38 @@ def parse_model_reply(reply_text):
     return action, max(0.0, amount)
 
 
+def build_agent_snapshots(agents, price, initial_agent_usdc):
+    snapshots = []
+    for agent in agents:
+        value_usdc = agent["usdc"] + agent["token"] * price
+        snapshots.append(
+            {
+                "agent_id": agent["id"],
+                "persona": agent["persona"],
+                "usdc_balance": agent["usdc"],
+                "token_balance": agent["token"],
+                "avg_entry_price": agent["avg"],
+                "value_usdc": value_usdc,
+                "pnl_usdc": value_usdc - initial_agent_usdc,
+            }
+        )
+    return snapshots
+
+
+def summarize_distribution(values):
+    sorted_values = sorted(values)
+    return {
+        "min": min(values),
+        "p50": sorted_values[len(sorted_values) // 2],
+        "max": max(values),
+        "avg": sum(values) / len(values),
+    }
+
+
+def empty_action_counts():
+    return {"BUY": 0, "SELL": 0, "HOLD": 0}
+
+
 async def request_agent_decision(http_session, request_semaphore, api_url, prompt_text, agent_index, retries, timeout_seconds):
     payload = {
         "contents": [{"parts": [{"text": prompt_text}]}],
@@ -161,8 +193,10 @@ async def request_agent_decision(http_session, request_semaphore, api_url, promp
         try:
             async with request_semaphore:
                 async with http_session.post(api_url, json=payload, timeout=aiohttp.ClientTimeout(total=timeout_seconds)) as response:
-                    if response.status == 429:
-                        await asyncio.sleep(2 ** attempt)
+                    if response.status in {429, 503}:
+                        # Back off when rate-limited or service is temporarily unavailable.
+                        backoff_seconds = min(8.0, float(2 ** attempt)) + random.random() * 0.35
+                        await asyncio.sleep(backoff_seconds)
                         continue
                     if response.status != 200:
                         body = (await response.text())[:500]
@@ -210,9 +244,18 @@ def run_simulation(config):
 
     initial_total_value = sum(agent["usdc"] + agent["token"] * starting_price for agent in agents)
     price_history = [starting_price]
-    total_action_counts = {"BUY": 0, "SELL": 0, "HOLD": 0}
-    round_snapshots = []
+    total_action_counts = empty_action_counts()
+    action_counts_by_persona = {persona: empty_action_counts() for persona in PERSONAS}
     market_counts_last_round = {"buys": 0, "sells": 0, "holds": len(agents)}
+    per_agent_history = {
+        agent["id"]: {
+            "agent_id": agent["id"],
+            "persona": agent["persona"],
+            "action_counts": empty_action_counts(),
+            "rounds": [],
+        }
+        for agent in agents
+    }
 
     async def run_all_rounds():
         request_semaphore = asyncio.Semaphore(max(1, config["max_concurrent"]))
@@ -255,9 +298,15 @@ def run_simulation(config):
                 round_buy_count = 0
                 round_sell_count = 0
                 round_hold_count = 0
+                round_actions_by_agent_id = {}
 
                 for agent_index, action, amount in decisions:
                     agent = agents[agent_index]
+                    agent_history = per_agent_history[agent["id"]]
+                    persona_action_counts = action_counts_by_persona[agent["persona"]]
+                    executed_action = "HOLD"
+                    executed_usdc = 0.0
+                    executed_token = 0.0
                     if action == "BUY" and amount > 0 and agent["usdc"] > 0:
                         usdc_to_spend = min(agent["usdc"], amount)
                         tokens_received = pool_buy(pool_state, usdc_to_spend)
@@ -274,9 +323,14 @@ def run_simulation(config):
                             agent["token"] = new_token_balance
                             round_buy_count += 1
                             total_action_counts["BUY"] += 1
+                            persona_action_counts["BUY"] += 1
+                            executed_action = "BUY"
+                            executed_usdc = usdc_to_spend
+                            executed_token = tokens_received
                         else:
                             round_hold_count += 1
                             total_action_counts["HOLD"] += 1
+                            persona_action_counts["HOLD"] += 1
                     elif action == "SELL" and amount > 0 and agent["token"] > 0:
                         tokens_to_sell = min(agent["token"], amount)
                         usdc_received = pool_sell(pool_state, tokens_to_sell)
@@ -288,35 +342,58 @@ def run_simulation(config):
                                 agent["avg"] = None
                             round_sell_count += 1
                             total_action_counts["SELL"] += 1
+                            persona_action_counts["SELL"] += 1
+                            executed_action = "SELL"
+                            executed_usdc = usdc_received
+                            executed_token = tokens_to_sell
                         else:
                             round_hold_count += 1
                             total_action_counts["HOLD"] += 1
+                            persona_action_counts["HOLD"] += 1
                     else:
                         round_hold_count += 1
                         total_action_counts["HOLD"] += 1
+                        persona_action_counts["HOLD"] += 1
+
+                    agent_history["action_counts"][executed_action] += 1
+                    round_actions_by_agent_id[agent["id"]] = {
+                        "requested_action": action,
+                        "requested_amount": amount,
+                        "executed_action": executed_action,
+                        "executed_usdc": executed_usdc,
+                        "executed_token": executed_token,
+                    }
 
                 market_counts_last_round.update(
                     {"buys": round_buy_count, "sells": round_sell_count, "holds": round_hold_count}
                 )
-                price_history.append(pool_price(pool_state))
+                round_price = pool_price(pool_state)
+                price_history.append(round_price)
 
-                if config["log_every"] > 0 and (round_number % config["log_every"] == 0 or round_number == config["rounds"]):
-                    round_snapshots.append(
+                for agent in agents:
+                    agent_value = agent["usdc"] + agent["token"] * round_price
+                    action_metadata = round_actions_by_agent_id[agent["id"]]
+                    per_agent_history[agent["id"]]["rounds"].append(
                         {
                             "round": round_number,
-                            "price": pool_price(pool_state),
-                            "event_type": event["type"],
-                            "event_magnitude": event["magnitude"],
-                            "headline": event["news"],
-                            "pool_usdc": pool_state["usdc"],
-                            "pool_token": pool_state["token"],
-                            "api_errors": api_error_count,
+                            "requested_action": action_metadata["requested_action"],
+                            "requested_amount": action_metadata["requested_amount"],
+                            "executed_action": action_metadata["executed_action"],
+                            "executed_usdc": action_metadata["executed_usdc"],
+                            "executed_token": action_metadata["executed_token"],
+                            "value_usdc": agent_value,
+                            "pnl_usdc": agent_value - config["initial_agent_usdc"],
+                            "usdc_balance": agent["usdc"],
+                            "token_balance": agent["token"],
+                            "avg_entry_price": agent["avg"],
                         }
                     )
+
+                if config["log_every"] > 0 and (round_number % config["log_every"] == 0 or round_number == config["rounds"]):
                     logging.info(
                         "round=%s price=%.6f event=%s mag=%.3f buys=%s sells=%s holds=%s errors=%s",
                         round_number,
-                        pool_price(pool_state),
+                        round_price,
                         event["type"],
                         event["magnitude"],
                         round_buy_count,
@@ -328,15 +405,63 @@ def run_simulation(config):
     asyncio.run(run_all_rounds())
 
     final_price = pool_price(pool_state)
-    final_total_value = sum(agent["usdc"] + agent["token"] * final_price for agent in agents)
-    final_agent_values = [agent["usdc"] + agent["token"] * final_price for agent in agents]
-    final_agent_pnls = [value - config["initial_agent_usdc"] for value in final_agent_values]
-
-    sorted_values = sorted(final_agent_values)
-    sorted_pnls = sorted(final_agent_pnls)
+    final_agent_snapshots = build_agent_snapshots(agents, final_price, config["initial_agent_usdc"])
+    final_agent_values = [agent_snapshot["value_usdc"] for agent_snapshot in final_agent_snapshots]
+    final_agent_pnls = [agent_snapshot["pnl_usdc"] for agent_snapshot in final_agent_snapshots]
+    final_total_value = sum(final_agent_values)
     persona_counts = {persona: 0 for persona in PERSONAS}
+    pnl_by_persona = {persona: [] for persona in PERSONAS}
+    value_by_persona = {persona: [] for persona in PERSONAS}
     for agent in agents:
-        persona_counts[agent["persona"]] = persona_counts.get(agent["persona"], 0) + 1
+        persona = agent["persona"]
+        final_value = agent["usdc"] + agent["token"] * final_price
+        pnl = final_value - config["initial_agent_usdc"]
+        persona_counts[persona] = persona_counts.get(persona, 0) + 1
+        pnl_by_persona[persona].append(pnl)
+        value_by_persona[persona].append(final_value)
+
+    persona_stats = {}
+    for persona in PERSONAS:
+        persona_pnls = pnl_by_persona.get(persona, [])
+        persona_values = value_by_persona.get(persona, [])
+        if not persona_pnls:
+            persona_stats[persona] = {
+                "count": 0,
+                "win_rate": 0.0,
+                "avg_pnl": 0.0,
+                "p50_pnl": 0.0,
+                "avg_value": 0.0,
+            }
+            continue
+        sorted_persona_pnls = sorted(persona_pnls)
+        wins = sum(1 for pnl in persona_pnls if pnl > 0)
+        persona_stats[persona] = {
+            "count": len(persona_pnls),
+            "win_rate": wins / len(persona_pnls),
+            "avg_pnl": sum(persona_pnls) / len(persona_pnls),
+            "p50_pnl": sorted_persona_pnls[len(sorted_persona_pnls) // 2],
+            "avg_value": sum(persona_values) / len(persona_values),
+        }
+
+    final_snapshots_by_id = {agent_snapshot["agent_id"]: agent_snapshot for agent_snapshot in final_agent_snapshots}
+    agents_output = []
+    for agent_id, history in per_agent_history.items():
+        final_snapshot = final_snapshots_by_id[agent_id]
+        agents_output.append(
+            {
+                "agent_id": history["agent_id"],
+                "persona": history["persona"],
+                "action_counts": history["action_counts"],
+                "final": {
+                    "usdc_balance": final_snapshot["usdc_balance"],
+                    "token_balance": final_snapshot["token_balance"],
+                    "avg_entry_price": final_snapshot["avg_entry_price"],
+                    "value_usdc": final_snapshot["value_usdc"],
+                    "pnl_usdc": final_snapshot["pnl_usdc"],
+                },
+                "rounds": history["rounds"],
+            }
+        )
 
     result = {
         "config": dict(config),
@@ -348,37 +473,16 @@ def run_simulation(config):
         "pnl_total_usdc": final_total_value - initial_total_value,
         "persona_counts": persona_counts,
         "action_counts": total_action_counts,
-        "agent_value_stats": {
-            "min": min(final_agent_values),
-            "p50": sorted_values[len(sorted_values) // 2],
-            "max": max(final_agent_values),
-            "avg": sum(final_agent_values) / len(final_agent_values),
-        },
-        "agent_pnl_stats": {
-            "min": min(final_agent_pnls),
-            "p50": sorted_pnls[len(sorted_pnls) // 2],
-            "max": max(final_agent_pnls),
-            "avg": sum(final_agent_pnls) / len(final_agent_pnls),
-        },
-        "time_series": round_snapshots,
+        "action_counts_by_persona": action_counts_by_persona,
+        "persona_stats": persona_stats,
+        "agent_value_stats": summarize_distribution(final_agent_values),
+        "agent_pnl_stats": summarize_distribution(final_agent_pnls),
+        "agents": agents_output,
     }
 
     if config["save_path"]:
-        output_payload = dict(result)
-        if config["save_agents"]:
-            output_payload["agents"] = [
-                {
-                    "agent_id": agent["id"],
-                    "persona": agent["persona"],
-                    "usdc_balance": agent["usdc"],
-                    "token_balance": agent["token"],
-                    "avg_entry_price": agent["avg"],
-                    "final_value_usdc": agent["usdc"] + agent["token"] * final_price,
-                }
-                for agent in agents
-            ]
         with open(config["save_path"], "w", encoding="utf-8") as output_file:
-            json.dump(output_payload, output_file, indent=2)
+            json.dump(result, output_file, indent=2)
         logging.info("wrote results to %s", config["save_path"])
 
     return result

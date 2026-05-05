@@ -11,7 +11,6 @@ DEFAULTS = {
     "pool_tokens": 10000000.0,
     "fee_bps": 30.0,
     "save_path": "results.json",
-    "save_agents": False,
     "log_every": 1,
     "gemini_model": "gemini-2.5-flash-lite",
     "max_concurrent": 50,
