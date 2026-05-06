@@ -102,11 +102,10 @@ SAVE_PATH="results.json" LOG_EVERY=1 python3 main.py
 - `by_persona`:
 - per-persona action counts (`BUY` / `SELL` / `HOLD`) for that round
 - per-persona current PnL fields:
-- `count`, `current_total_pnl`, `current_total_pnl_pct`
-- `avg_pnl`, `avg_pnl_pct`
-- `pnl_change_from_prev_round`, `pnl_change_pct_from_prev_round`
+    - `count`, `current_total_pnl`, `current_total_pnl_pct`
+    - `avg_pnl`, `avg_pnl_pct`
+    - `pnl_change_from_prev_round`, `pnl_change_pct_from_prev_round`
 
-This flatter structure is round-centric and persona-aggregated (instead of large per-agent rows each round).
 
 ## Parallelism
 

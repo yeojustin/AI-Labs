@@ -2,8 +2,8 @@
 # You can override them by setting the environment variables.
 # Or you can change the values directly in the code.
 DEFAULTS = {
-    "agents": 50,
-    "rounds": 10,
+    "agents": 1000,
+    "rounds": 50,
     "seed": 42,
     "scenario": "balanced",
     "initial_agent_usdc": 1000.0,

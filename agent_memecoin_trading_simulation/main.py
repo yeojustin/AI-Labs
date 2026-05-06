@@ -230,6 +230,10 @@ def run_simulation(config):
             }
         )
 
+    initial_persona_counts = {persona: 0 for persona in PERSONAS}
+    for agent in agents:
+        initial_persona_counts[agent["persona"]] += 1
+
     initial_total_value = sum(agent["usdc"] + agent["token"] * starting_price for agent in agents)
     price_history = [starting_price]
     total_action_counts = empty_action_counts()
@@ -237,6 +241,38 @@ def run_simulation(config):
     market_counts_last_round = {"buys": 0, "sells": 0, "holds": len(agents)}
     rounds_output = []
     previous_avg_pnl_by_persona = {persona: 0.0 for persona in PERSONAS}
+
+    rounds_output.append(
+        {
+            "round": 0,
+            "price": starting_price,
+            "price_change_pct": 0.0,
+            "event": "INITIAL_STATE",
+            "news": "Starting state before any agent actions.",
+            "buys": 0,
+            "sells": 0,
+            "holds": len(agents),
+            "total_buy_tokens": 0.0,
+            "total_sell_tokens": 0.0,
+            "net_order_flow_tokens": 0.0,
+            "by_persona": {
+                persona: {
+                    "BUY": 0,
+                    "SELL": 0,
+                    "HOLD": initial_persona_counts[persona],
+                    "count": initial_persona_counts[persona],
+                    "current_total_pnl": 0.0,
+                    "current_total_pnl_pct": 0.0,
+                    "avg_pnl": 0.0,
+                    "avg_pnl_pct": 0.0,
+                    "pnl_change_from_prev_round": 0.0,
+                    "pnl_change_pct_from_prev_round": 0.0,
+                }
+                for persona in PERSONAS
+            },
+            "errors": 0,
+        }
+    )
 
     async def run_all_rounds():
         request_semaphore = asyncio.Semaphore(max(1, config["max_concurrent"]))
